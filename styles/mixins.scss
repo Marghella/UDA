@@ -1,0 +1,218 @@
+//&  CTRL + K + 0 FOR COLLAPS ALL MIXINS. REVERSE CTRL + K + J
+@mixin NoDrag() {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+@mixin NoHighlights() {
+  
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin DiscordScrollbar() {
+  &::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+      background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #202225;
+    min-height: 40px;
+    border : 4px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border : 4px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px;
+    background-color: #2e3338;
+  }
+}
+
+@mixin CenterFlex() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin BrokeWord($max-width) {
+	max-width: $max-width;
+  overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  word-break: break-all;
+}
+
+@mixin Button1($width, $height) {
+  font-family: "Whitney Medium";
+  font-size: 18px !important;
+	background-color: #7289da;
+	width: $width;
+	height: $height;
+	color: white;
+	border: none;
+	border-radius: 3px;
+	margin-bottom: none;
+  margin: 0;
+  @include CenterFlex();
+	-webkit-transition-duration: 0.1s;
+	transition-duration: 0.1s;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: #768fe9;
+  }
+}
+
+@mixin Button2($width, $height, $darktheme: true) {
+  font-family: 'Whitney Medium';
+  font-size: 16px;
+	width: $width;
+	height: $height;
+  border-radius: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+  @if $darktheme {
+    color: white;
+    background-color: black;
+  } 
+  @else {
+    color: black;
+    background-color: white;
+  }
+
+  border: none;
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+
+  &:focus {
+    outline: none;
+  }
+  
+  &:hover {
+    outline: none;
+    -webkit-box-shadow: 0 8px 10px -3px black;
+    -moz-box-shadow: 0 8px 10px -3px black;
+    box-shadow: 0 8px 10px -3px black;
+    color: #7289da;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+  }
+  
+}
+
+@mixin PopupBackground() {
+  position: fixed;
+  width: 100vw;
+  height: calc(100vh - 23px);
+  opacity: 0.8;
+  background-color: rgb(0 , 0, 0);
+  left: 0;
+  top: 23px;
+  z-index: 149;
+  @include CenterFlex();
+}
+
+@mixin MenuBackground() {
+  position: fixed;
+  width: 100vw;
+  height: calc(100vh);
+  opacity: 0.8;
+  background-color: rgb(0 , 0, 0);
+  left: 0;
+  top: 0;
+  z-index: 200;
+}
+
+@mixin TextareaStyle($widthElement, $heightElement, $fontSize, $fontFamily: 'Whitney Medium') {
+  width: calc($widthElement - 10px);
+  height: calc($heightElement - 10px);
+  background-color: colors.$notquiteblack;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  border: 0;
+  padding: 5px;
+  color: white;
+	resize: none;
+	border: none;
+	font-family: "Whitney Medium";
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+@mixin Tooltip($widthElement, $heightElement, $widthPopup, $backgroundColorPopup: colors.$notquiteblack) {
+  // & USAGE
+  // {condition && <div className={styles.tooltip}>
+  //     <div>
+  //       {'text'}
+  //     </div>
+  // </div>}
+  // Made by Gunter ©
+  height: $heightElement;
+  width: $widthElement;
+  display: flex;
+  justify-content: center;
+  div {
+    font-family: 'Whitney Medium';
+    font-size: 12px;
+    position: absolute;
+    width: $widthPopup;
+    @include CenterFlex();
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $backgroundColorPopup;
+    white-space: pre-line;
+  }
+}
+
+@mixin InputStyle($widthElement, $heightElement, $fontSize, $padding: 5px, $fontFamily: 'Whitney Medium') {
+  width: calc(#{$widthElement} - calc(#{$padding} * 2));
+  height: calc(#{$heightElement} - calc(#{$padding} * 2));
+  background-color: colors.$notquiteblack;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  border: 0;
+  padding: $padding;
+  color: white;
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+@mixin SelectStyle($widthElement, $heightElement, $fontSize, $backgroundColor : colors.$darkbutnotblack,) {
+  background-color: $backgroundColor;
+  width: $widthElement;
+  height: $heightElement;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 1px;
+  border-radius: 4px;
+  font-family: 'Whitney Medium';
+  option {
+   border:0px;
+   outline:0px;
+  }
+}
