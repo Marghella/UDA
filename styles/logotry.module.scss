@@ -1,0 +1,56 @@
+.forbiceDestra,  .forbiceSinistra, .lineatratteggiata, .nuvola, .scritta {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+@keyframes sx {
+  50% {fill:blue;  transform: rotateZ(-15deg);}
+  100% {fill:white; transform: translateY(15deg); }
+}
+
+.forbiceSinistra {
+  animation: sx 2s ease-in infinite;
+}
+
+@keyframes dx {
+  50% {fill:blue;  transform: rotateZ(15deg);}
+  100% {fill:white; transform: translateY(-15deg); }  
+}
+
+.forbiceDestra {
+  // animation: dx 2s ease-in infinite;
+}
+
+@keyframes scissormove {
+  from {
+    top: 100px;
+    left: 100px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+.forbiceDestra, .forbiceSinistra {
+  animation: scissormove .5s ease-in-out ;
+}
+
+@keyframes movelinea {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lineatratteggiata {
+  animation: movelinea 1s ease-in-out ;
+}
+
+.nuvola {
+  animation: movelinea 1.25s ease-in-out ;
+}
