@@ -1,80 +1,54 @@
 import React, { useEffect, useState, useRef } from 'react';
-import dynamic from 'next/dynamic';
-import indexBy from 'index-array-by';
-import * as d3 from 'd3-dsv';
+import {
+  Spring, animated, config,
+} from 'react-spring';
+import styles from './styles/Home.module.scss';
 
-const Globe = dynamic(
-  () => import('react-globe.gl'),
-  { ssr: false },
-);
+let Globe = () => null;
+// eslint-disable-next-line global-require
+if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
+
 export default function Home() {
-  const [m, setM] = useState(false);
+  const [title, setTitle] = useState(false);
+  const globeEl = useRef(null);
   useEffect(() => {
-    setM(true);
+    let to;
+    (function check() {
+      if (globeEl.current) {
+        globeEl.current.controls().autoRotate = true;
+        globeEl.current.controls().autoRotateSpeed = 15;
+        globeEl.current.pointOfView({ lat: 0, lng: 0, altitude: 1.8 });
+      } else {
+        to = setTimeout(check, 1000);
+      }
+    }());
+    return () => {
+      if (to) {
+        clearTimeout(to);
+      }
+    };
   }, []);
-  const globeEl = useRef();
-  const [airports, setAirports] = useState([]);
-  const [routes, setRoutes] = useState([]);
-  const COUNTRY = 'United States';
-  const OPACITY = 0.22;
-
-  const airportParse = ([airportId, name, city, country, iata, icao, lat, lng, alt, timezone, dst, tz, type, source]) => ({
-    airportId, name, city, country, iata, icao, lat, lng, alt, timezone, dst, tz, type, source,
-  });
-  const routeParse = ([airline, airlineId, srcIata, srcAirportId, dstIata, dstAirportId, codeshare, stops, equipment]) => ({
-    airline, airlineId, srcIata, srcAirportId, dstIata, dstAirportId, codeshare, stops, equipment,
-  });
-
-  useEffect(() => {
-    // load data
-    Promise.all([
-      fetch('https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat').then((res) => res.text())
-        .then((d) => d3.csvParseRows(d, airportParse)),
-      fetch('https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat').then((res) => res.text())
-        .then((d) => d3.csvParseRows(d, routeParse)),
-    ]).then(([airports, routes]) => {
-      const byIata = indexBy(airports, 'iata', false);
-
-      const filteredRoutes = routes
-        .filter((d) => byIata.hasOwnProperty(d.srcIata) && byIata.hasOwnProperty(d.dstIata)) // exclude unknown airports
-        .filter((d) => d.stops === '0') // non-stop flights only
-        .map((d) => Object.assign(d, {
-          srcAirport: byIata[d.srcIata],
-          dstAirport: byIata[d.dstIata],
-        }))
-        .filter((d) => d.srcAirport.country === COUNTRY && d.dstAirport.country !== COUNTRY); // international routes from country
-
-      setAirports(airports);
-      setRoutes(filteredRoutes);
-    });
-  }, []);
-
-  useEffect(() => {
-    if (globeEl.current) { globeEl.current.pointOfView({ lat: 39.6, lng: -98.5, altitude: 2 }); }
-  }, []);
+  function TitleOut() {
+    setTitle(true);
+  }
   return (
-    <div>
-      {m && <Globe ref={globeEl}
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-
-        arcsData={routes}
-        arcLabel={(d) => `${d.airline}: ${d.srcIata} &#8594; ${d.dstIata}`}
-        arcStartLat={(d) => +d.srcAirport.lat}
-        arcStartLng={(d) => +d.srcAirport.lng}
-        arcEndLat={(d) => +d.dstAirport.lat}
-        arcEndLng={(d) => +d.dstAirport.lng}
-        arcDashLength={0.25}
-        arcDashGap={1}
-        arcDashInitialGap={() => Math.random()}
-        arcDashAnimateTime={4000}
-        arcColor={(d) => [`rgba(0, 255, 0, ${OPACITY})`, `rgba(255, 0, 0, ${OPACITY})`]}
-        arcsTransitionDuration={0}
-
-        pointsData={airports}
-        pointColor={() => 'orange'}
-        pointAltitude={0}
-        pointRadius={0.02}
-        pointsMerge={true}/>}
-    </div>
+    <Spring from={{ bottom: 0, fontSize: 140 }} to={{ bottom: title ? 500 : 0, fontSize: title ? 80 : 140 }} config={config.molasses}>
+      {(styless) => <animated.div style={styless} className={styles.home} onClick={() => TitleOut()}>
+        <animated.div className={styles.title}>
+        IL M
+          <Globe
+            ref={globeEl}
+            globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
+            width={title ? 80 : 150}
+            height={title ? 80 : 150}
+            backgroundColor='#EDF0E6'
+          />
+        NDO CHE VORREI
+        </animated.div>
+        <div className={styles.earth}>
+        </div>
+      </animated.div>
+      }
+    </Spring>
   );
 }

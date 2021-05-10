@@ -34,7 +34,7 @@ body {
 	min-width: 800px;
 	min-height: 600px;
   @include DiscordScrollbar();
-  overflow: auto;
+  overflow: hidden;
 }
 
 #root {
