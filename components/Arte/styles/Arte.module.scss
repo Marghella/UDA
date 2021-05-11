@@ -1,9 +1,12 @@
 @use '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
 .forbiceDestra,  .forbiceSinistra, .lineatratteggiata, .nuvola, .scritta {
   position: absolute;
-  left: 0;
-  top: 0;
   fill: #35B160;
+  width: clamp(300px, 50vw, 700px);
+  height: clamp(214px, 50vw, 700px);
+
 }
 
 .scritta {
@@ -44,34 +47,18 @@
   }
 }
 
-.buildnuvola {
-  position: absolute;
-  background-color: colors.$body_color;
-  width: 1100px;
-  height: 1100px;
-  left: 1200px;
-  top: 100px;
-  z-index: 3;
-  animation: build .5s ease-in;
-}
-
-.forbiceDestra {
-  // animation: dx 2s ease-in infinite;
-}
 
 @keyframes scissormove {
   from {
-    top: 100px;
-    left: 100px;
     opacity: 0;
   }
   to {
-    top: 0px;
+    opacity: 1;
   }
 }
 
 .forbiceDestra, .forbiceSinistra {
-  animation: scissormove .5s ease-in-out ;
+  animation: scissormove 1.5s ease-in-out ;
 }
 
 @keyframes cut {
@@ -79,7 +66,7 @@
     transform: rotateZ(0deg);
   }
   50% {
-    transform: rotateZ(-5deg);
+    transform: rotateZ(-15deg);
   }
   100% {
     transform: rotateZ(0deg);
@@ -105,4 +92,81 @@
 
 .nuvola {
   animation: movelinea 1.25s ease-in-out ;
+}
+
+
+// No animation
+
+.main {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  min-width: 500px;
+}
+
+.title {
+  height: 100px;
+  width: 100%;
+}
+
+.contenuto {
+  height: calc(80% - 100px);
+  position: relative;
+  @include CenterFlex();
+  flex-direction: row;
+  font-family: 'Whitney Medium';
+}
+
+.contenuto.C {
+  width: 1000px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  h1, h2, h4 {
+    margin: 0;
+    text-align: left;
+  }
+  h1 {
+    font-size: clamp(40px, 5vw, 50px);
+  }
+  h2 {
+    font-size: clamp(30px, 5vw, 30px);
+  }
+  h4 {
+    font-size: 20px;
+  }
+}
+
+.sub {
+  @include CenterFlex();
+  button {
+    margin: 20px;
+    @include Button2(200px, 100px, false);
+    font-size: 40px;
+  }
+}
+
+.bannerdown {
+  fill: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: clamp(42.8px, 50vw, 100px);
+  height: 200px;
+  background-color: colors.$green_object;
+  @include CenterFlex();
+  svg {
+    position: absolute;
+    width: clamp(42.8px, 50vw, 80px);
+    height: clamp(42.8px, 50vw, 80px);
+  }  
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row !important;
+  overflow: hidden;
 }
