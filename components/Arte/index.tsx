@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Spring, animated } from 'react-spring';
+import {
+  Spring, animated, Transition, a,
+} from 'react-spring';
 import clsx from 'clsx';
 import Image from 'next/image';
 import {
@@ -12,15 +14,27 @@ export default function Arte() {
   const [toggle, settoggle] = useState(false);
   const [clickLogo, setClickLogo] = useState(0);
   const urlImages = [
-    { url: '/images/esempi/bella.jpeg', width: 655, height: 131 },
-    { url: '/images/esempi/down.jpeg', width: 624, height: 163 },
-    { url: '/images/esempi/gallina.jpeg', width: 484, height: 160 },
-    { url: '/images/esempi/grassotta.jpeg', width: 532, height: 158 },
-    { url: '/images/esempi/handicappatona.jpeg', width: 530, height: 107 },
-    { url: '/images/esempi/latopositivo.jpeg', width: 664, height: 172 },
-    { url: '/images/esempi/liberata.jpeg', width: 602, height: 244 },
-    { url: '/images/esempi/trucco.jpeg', width: 527, height: 177 },
-    { url: '/images/esempi/venezia.jpeg', width: 609, height: 154 },
+    {
+      url: '/images/esempi/bella.jpeg', width: 655, height: 131, key: 0,
+    },
+    {
+      url: '/images/esempi/down.jpeg', width: 624, height: 163, key: 1,
+    },
+    {
+      url: '/images/esempi/gallina.jpeg', width: 484, height: 160, key: 2,
+    },
+    {
+      url: '/images/esempi/grassotta.jpeg', width: 532, height: 158, key: 3,
+    },
+    {
+      url: '/images/esempi/handicappatona.jpeg', width: 530, height: 107, key: 4,
+    },
+    {
+      url: '/images/esempi/latopositivo.jpeg', width: 664, height: 172, key: 5,
+    },
+    // { url: '/images/esempi/liberata.jpeg', width: 602, height: 244 },
+    // { url: '/images/esempi/trucco.jpeg', width: 527, height: 177 },
+    // { url: '/images/esempi/venezia.jpeg', width: 609, height: 154 },
   ];
   useEffect(() => {
     const int = setTimeout(() => {
@@ -74,7 +88,21 @@ molto più insidioso e molesto, perché lede la persona fin dentro la sua
 casa, che dovrebbe rappresentare per lui un luogo sicuro.
             </h4></>}
           {clickLogo === 3 && <>
-            {urlImages.map((url, i) => <Image src={url.url} key={i} alt='' width={url.width} height={url.height}/>)}
+            <Transition
+              items={urlImages}
+              keys={(item: any) => item.key}
+              from={{ opacity: 0, height: 0, width: 0 }}
+              leave={{ opacity: 0 }}
+              enter={({ width, height }) => ({ opacity: 1, width, height })}
+            >
+              {(styless, item) => (
+                <div className={styles.fixed}>
+                  <animated.div >
+                    <a.img src={item.url} style={styless}/>
+                  </animated.div>
+                </div>
+              )}
+            </Transition>
           </>}
         </div>
       </div>

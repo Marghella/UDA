@@ -164,9 +164,25 @@
   }  
 }
 
+.contenuto.C.wrap {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.fixed {
+  height: 33%;
+}
+
 .wrap {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row !important;
+  flex-direction: column !important;
+  flex-wrap: wrap !important;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
+  img {
+    margin: 10px;
+    flex-basis: 33%;
+  }
 }
