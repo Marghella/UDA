@@ -31,8 +31,8 @@ body {
 	background-color: colors.$body_color;
 	margin: 0;
 	padding: 0;
-	min-width: 800px;
-	min-height: 600px;
+	min-width: 900px;
+	min-height: 900px;
   @include DiscordScrollbar();
   overflow: hidden;
 }
