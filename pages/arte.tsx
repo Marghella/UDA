@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Arte from '../../components/Arte';
-import Home from '../../components/Home';
+import Arte from '../components/Arte';
+import Home from '../components/Home';
 
 export default function artepage() {
   return (<>

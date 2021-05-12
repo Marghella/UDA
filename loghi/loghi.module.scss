@@ -1,0 +1,145 @@
+@use '../styles/colors.scss';
+
+
+// Scienze
+
+.padding {
+  position: absolute;
+  z-index: 2;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid black;
+  .scienze {
+    background: linear-gradient(90deg, rgba(248,202,56,1) 0%, rgba(146,201,39,1) 100%);
+    width: 80px;
+    height:116px;
+    svg {
+      background-color: transparent;
+      position: absolute;
+      width: 80px;
+      height:116px;
+      fill: white;
+    }
+  }
+}
+
+.absright {
+  position: absolute;
+  // transform: rotate(10deg);
+  z-index: 3;
+}
+
+
+// Arte
+
+.logo {
+  position: absolute;
+  width: 100px;
+  height: 145px;
+  .green {
+      background-color: transparent;
+      position: absolute;
+      width: 100px;
+      height: 145px;
+      fill: #35B160;
+  }
+  .blu {
+      background-color: transparent;
+      position: absolute;
+      width: 100px;
+      height: 145px;
+      fill: #0D637D;
+  }
+}
+
+
+.forbiceDestra {
+  z-index: 4;
+}
+
+
+.forbiceSinistra {
+  z-index: 4;
+}
+
+
+.lineatratteggiata {
+  z-index: 4;
+}
+
+
+.nuvola {
+  z-index: 2;
+}
+
+
+.scritta {
+  z-index: 5;
+}
+
+@keyframes build {
+  from {
+    left: 0
+  }
+  to {
+    left: 1200px;
+    display: none;
+  }
+}
+
+
+@keyframes scissormove {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.forbiceDestra, .forbiceSinistra {
+  animation: scissormove 1.5s ease-in-out ;
+  animation-delay: 5000ms;
+}
+
+@keyframes cut {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(-15deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.cut {
+  animation: cut 2s ease-in-out;
+  animation-delay: 1000ms;
+}
+
+@keyframes movelinea {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lineatratteggiata {
+  animation: movelinea 1s ease-in-out ;
+  animation-delay: 5000ms;
+}
+
+.nuvola {
+  animation: movelinea 1.25s ease-in-out ;
+  animation-delay: 5000ms;
+}
+
+.l {
+  width: 100px;
+  height: 145px;
+  position: absolute;
+}

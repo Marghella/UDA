@@ -3,10 +3,9 @@ import {
   Spring, animated, Transition, a,
 } from 'react-spring';
 import clsx from 'clsx';
-import Image from 'next/image';
 import {
   ForbiceDestraSVG, ForbiceSinistraSVG, LineaTraggiataSVG, NuvolaSVG, ScrittaSVG,
-} from '../../public/images/logo/logo';
+} from '../../public/images/logoarte';
 import styles from './styles/Arte.module.scss';
 
 export default function Arte() {
@@ -79,13 +78,13 @@ export default function Arte() {
             <h2>So che ogni mia parola può avere conseguenze, piccole o grandi.</h2>
             <br />
             <h4>‘’Le parole sono la nostra massima e inesauribile fonte, in grado
-sia di infliggere dolore che di alleviarlo. ‘’ <br />
-Sta a noi decidere in che maniera utilizzarle, se come ponte, per creare
-armonia, connessione, dialogo, oppure come arma, per ferire ed
-allontanare le persone, per farle sentire inadeguate o sbagliate.
-Il cyberbullismo è un problema vero come lo è una violenza fisica,
-molto più insidioso e molesto, perché lede la persona fin dentro la sua
-casa, che dovrebbe rappresentare per lui un luogo sicuro.
+              sia di infliggere dolore che di alleviarlo. ‘’ <br />
+              Sta a noi decidere in che maniera utilizzarle, se come ponte, per creare
+              armonia, connessione, dialogo, oppure come arma, per ferire ed
+              allontanare le persone, per farle sentire inadeguate o sbagliate.
+              Il cyberbullismo è un problema vero come lo è una violenza fisica,
+              molto più insidioso e molesto, perché lede la persona fin dentro la sua
+              casa, che dovrebbe rappresentare per lui un luogo sicuro.
             </h4></>}
           {clickLogo === 3 && <>
             <Transition
