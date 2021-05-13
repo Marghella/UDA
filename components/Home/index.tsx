@@ -59,7 +59,7 @@ export default function Home({ children }) {
     class: 'arte',
     key: 2,
   }, {
-    logo: <ReligioneLogo/>,
+    logo: <ReligioneLogo animation={hover === 3}/>,
     link: '/religione',
     class: 'religione',
     key: 3,

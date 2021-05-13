@@ -1,5 +1,5 @@
 @use '../styles/colors.scss';
-
+@import '../styles/mixins.scss';
 
 // Scienze
 
@@ -142,4 +142,44 @@
   width: 100px;
   height: 145px;
   position: absolute;
+}
+
+// Religione
+
+.logo_religione {
+  @include CenterFlex();
+  position: relative;
+  width: 100px;
+  height: 145px;
+  div {
+    position: absolute;
+    width: 100px;
+    height: 145px;
+  }
+  svg {
+    position: absolute;
+    width: 100px;
+    height: 145px;
+  }
+  .sup {
+    fill: #3f6f82;
+  }
+  .inf {
+    fill: #0eb0bb;
+  }
+  .foglie {
+    fill: #718d3b;
+  }
+  .ramo {
+    fill: #472b12;
+  }
+  .martelloc {
+    fill: #623613;
+  }
+  .martellos {
+    fill: #472b12;
+  }
+  .zampe {
+    fill: #773e1a;
+  }
 }
