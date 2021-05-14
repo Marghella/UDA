@@ -7,17 +7,12 @@
   width: 100vw;
 }
 
-.home {
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  @include CenterFlex();
-}
-
 .title {
-  width: 100%;
-  @include CenterFlex();
+  position: absolute;
+  z-index: 1000;
+  height: 50px;
+  width: 100vw;
+  text-align: center;
   font-family: 'Whitney Bold';
 }
 

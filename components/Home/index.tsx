@@ -67,9 +67,16 @@ export default function Home({ children }) {
   return (<>
     {/* title */}
     <div className={styles.main}>
-      <Spring from={{ bottom: titlepositionfrom, fontSize: 140 - ((size.width / 100) * 1) }} to={{ bottom: title ? size.height / 2 - 50 : 0, fontSize: title ? ((size.width / 100) * 4) : ((size.width / 100) * 5) }} config={config.molasses}>
-        {(styless) => <animated.div style={styless} className={styles.home} onClick={() => setTitle(true)}>
-          <animated.div className={styles.title}>
+      <Spring from={{
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        fontSize: 140 - ((size.width / 100) * 1),
+      }} to={{
+        top: title ? '0%' : '50%', left: '50%', transform: title ? 'translate(-50%, 0)' : 'translate(-50%, -50%)', fontSize: title ? ((size.width / 100) * 4) : ((size.width / 100) * 5),
+      }} config={config.molasses}>
+        {(styless) => <>
+          <animated.div className={styles.title} style={styless} onClick={() => { setTitle(true); if (router.asPath !== '/') router.push('/'); }}>
         IL MO
             {/* <Globe
             ref={globeEl}
@@ -82,7 +89,7 @@ export default function Home({ children }) {
           </animated.div>
           <div className={styles.earth}>
           </div>
-        </animated.div>
+        </>
         }
       </Spring>
       {(title && router.asPath === '/') && <div className={styles.menu}>
