@@ -49,7 +49,7 @@ export default function Home({ children }) {
     class: 'scienze',
     key: 0,
   }, {
-    logo: <StoriaLogo/>,
+    logo: <StoriaLogo animation={hover === 1}/>,
     link: '/storia',
     class: 'storia',
     key: 1,

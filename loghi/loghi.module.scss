@@ -186,13 +186,21 @@
 
 
 .logo_storia {
+  @include CenterFlex();
+  position: relative;
+  width: 100px;
+  height: 145px;
+  .relative {
+    position: relative;
+    @include CenterFlex();
+  }
   svg {
     position: absolute;
   }
-  .white {
-    fill: white;
-  }
-  .green {
-    fill: green;
+  .immobile, .coccarda, .bracciadestro, .bracciasinistro, .manodx, .manosx {
+    @include CenterFlex();
+    position: absolute;
+    width: 200px;
+    height: 100px;
   }
 }
