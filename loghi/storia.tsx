@@ -1,5 +1,5 @@
 import React from 'react';
-import { a, Spring } from 'react-spring';
+import { animated, Spring, config } from 'react-spring';
 import {
   BracciaDestra, BracciaSinistra, CoccardaBianca, CoccardaCentro, CoccardaVerde, CoccardaRosso, CorniceOcchi, Iride, Occhi, Pergamenta1, Pergamenta2, Pergamenta3, Pergamenta4,
   Pergamenta5, Pergamenta6, Piede, ScrittaDestra, ScrittaDestra1, ScrittaSinistra, ScrittaSinistra1, ManoDestra,
@@ -14,6 +14,7 @@ interface LogoProps {
 }
 
 export default function LogoStoria({ otherClass, animation, ...other }:LogoProps) {
+  // TODO (se ne ho voglia) ingrandire mani
   return <>
     <div className={styles.logo_storia}>
       <div className={styles.relative}>
@@ -37,31 +38,31 @@ export default function LogoStoria({ otherClass, animation, ...other }:LogoProps
           <Pergamenta6 fill='#dddb8e' />
           <Piede fill='black'/>
         </div>
-        <Spring from={{ transform: 'translate(0,0)' }} to={{ transform: animation ? 'translate(0,10px)' : 'translate(0,0)' }}>
+        <Spring to={{ transform: animation ? 'translate(0px,10px)' : 'translate(0px,0px)' }} config={config.default}>
           {(bracciodx) => <>
-            <a.div className={styles.bracciadestro} style={bracciodx}>
+            <animated.div className={styles.bracciadestro} style={bracciodx}>
               <BracciaDestra fill='black' />
-              <div className={styles.manodx}>
+              <animated.div className={styles.manodx}>
                 <ManoDestra fill='#c6c67c' />
                 <SostenitoreDestro2 fill='#1f1009' />
                 <SostenitoreDestro3 fill='#1f1009' />
                 <ScrittaDestra fill='#a17048'/>
                 <ScrittaDestra1 fill='#5a2811'/>
-              </div>
-            </a.div>
+              </animated.div>
+            </animated.div>
           </>}</Spring>
-        <Spring from={{ transform: 'translate(0,0)' }} to={{ transform: animation ? 'translate(0,-10px)' : 'translate(0,0)' }}>
+        <Spring to={{ transform: animation ? 'translate(0px,-10px)' : 'translate(0px,0px)' }}>
           {(bracciosx) => <>
-            <a.div className={styles.bracciasinistro} style={bracciosx}>
+            <animated.div className={styles.bracciasinistro} style={bracciosx}>
               <BracciaSinistra fill='black' />
-              <div className={styles.manosx}>
+              <animated.div className={styles.manosx}>
                 <ScrittaSinistra fill='#a17048'/>
                 <ScrittaSinistra1 fill='#5a2811'/>
                 <ManoSinistra fill='#c6c67c' />
                 <SostenitoreSinistro2 fill='#1f1009' />
                 <SostenitoreSinistro3 fill='#1f1009' />
-              </div>
-            </a.div>
+              </animated.div>
+            </animated.div>
           </>}
         </Spring>
       </div>
