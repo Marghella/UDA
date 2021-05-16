@@ -16,15 +16,17 @@ if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
 
 export default function Home({ children }) {
   const router = useRouter();
+  const [color, setColor] = useState(false);
   const [title, setTitle] = useState(false);
   const globeEl = useRef(null);
   const size = useWindowSize();
-  const [titlepositionfrom, settitlepositionfrom] = useState(0);
+  const [titlepositionfrom, settitlepositionfrom] = useState(false);
   const [hover, setHover] = useState(undefined);
   useEffect(() => {
     if (router.asPath !== '/') {
-      settitlepositionfrom(size.height / 2 - 50);
+      settitlepositionfrom(true);
       setTitle(true);
+      setColor(true);
     }
     if (size.width < 900 || size.height < 900) alert('VISUALIZZARE IL PROGETTO AD UNA RISOLUZIONE PIÙ ALTA, MINIMO 900x900');
     let to;
@@ -68,12 +70,13 @@ export default function Home({ children }) {
     {/* title */}
     <div className={styles.main}>
       <Spring from={{
-        top: '50%',
+        top: titlepositionfrom ? '0%' : '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         fontSize: 140 - ((size.width / 100) * 1),
+        color: color ? 'white' : 'black',
       }} to={{
-        top: title ? '0%' : '50%', left: '50%', transform: title ? 'translate(-50%, 0)' : 'translate(-50%, -50%)', fontSize: title ? ((size.width / 100) * 4) : ((size.width / 100) * 5),
+        top: title ? '0%' : '50%', left: '50%', transform: title ? 'translate(-50%, 0)' : 'translate(-50%, -50%)', fontSize: title ? ((size.width / 100) * 4) : ((size.width / 100) * 5), color: color ? 'white' : 'black',
       }} config={config.molasses}>
         {(styless) => <>
           <animated.div className={styles.title} style={styless} onClick={() => { setTitle(true); if (router.asPath !== '/') router.push('/'); }}>
