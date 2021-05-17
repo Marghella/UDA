@@ -52,3 +52,49 @@
 .storia { grid-area: storia; }
 .religione { grid-area: religione; }
 .scienze { grid-area: scienze; }
+
+
+.buttonMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  width: 50px;
+  height: 50px;
+  svg {
+    width: 50px;
+    height: 50px;  
+  }
+  z-index: 999;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.menuSlide {
+  position: absolute;
+  width: calc(300px - 40px);
+  height: calc(100% - 40px);
+  background-color: white;
+  left: 0;
+  z-index: 1000;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 20px;
+  .menuflex {
+    z-index: 1001;
+    width: calc(100%);
+    height: calc(100%);
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.backgroundBlack {
+  background-color: black;
+  z-index: 998;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}

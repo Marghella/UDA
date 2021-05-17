@@ -1,12 +1,11 @@
 import React, {
-  useState, useCallback, useRef, useEffect,
+  useState, useCallback, useRef,
 } from 'react';
+import { useRouter } from 'next/router';
 import {
-  Transition, animated, config,
+  Transition, animated, config, Spring, a,
 } from 'react-spring';
-import clsx from 'clsx';
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
-import Image from 'next/image';
 import {
   Sole, Bolle, Onde, Pannello, Wave, Eoliche, Recycle, EarthLine, OtherRecycle,
 } from '../../public/images/scienzeparallax';
@@ -19,8 +18,10 @@ import useEventListener from '../../hooks/useEventListener';
 const url = (name: string, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 
 export default function Scienze() {
+  const router = useRouter();
   const parallax = useRef(null);
   const setteref = useRef<HTMLDivElement>(null);
+  const [hover, setHover] = useState(false);
   const imgs = [{ img: <Uno fill='black'/>, class: 'uno' }, { img: <Due />, class: 'due' }, { img: <Tre />, class: 'tre' }, { img: <Quattro />, class: 'quattro' }, { img: <Cinque />, class: 'cinque' }, { img: <Sei />, class: 'sei' }, {
     img: <Sette onClick={() => parallax.current.scrollTo(3)}/>,
     class: 'sette',
@@ -290,6 +291,13 @@ export default function Scienze() {
             Conservare e utilizzare in modo durevole gli oceani, i mari e le risorse marine per uno sviluppo sostenibile
             </div>
           </div>
+          <Spring
+            from={{ width: 100, color: 'blue' }}
+            to={{ width: hover ? 500 : 100, color: hover ? 'white' : 'blue' }}>
+            {(buttonStyle) => <>
+              <a.button onClick={() => router.push('/scienze/gioco')} className={styles.absoluteButton} style={buttonStyle} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}><span>Video Progetto Pl@sticando</span></a.button>
+            </>}
+          </Spring>
         </ParallaxLayer>
 
       </Parallax>

@@ -1,14 +1,18 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, {
+  useEffect, useState, useRef, useCallback,
+} from 'react';
 import {
-  Spring, animated, config, Transition,
+  Spring, animated, config, Transition, a,
 } from 'react-spring';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import useWindowSize from '../../hooks/useWindowSize';
+import useEventListener from '../../hooks/useEventListener';
 import styles from './styles/Home.module.scss';
 import {
   ScienzeLogo, StoriaLogo, ArteLogo, ReligioneLogo,
 } from '../../loghi/index';
+import Menu from '../../public/images/leftmenu/menu';
 
 let Globe = () => null;
 // eslint-disable-next-line global-require
@@ -16,6 +20,7 @@ if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
 
 export default function Home({ children }) {
   const router = useRouter();
+  const [viewMenu, setViewMenu] = useState(false);
   const [color, setColor] = useState(false);
   const [title, setTitle] = useState(false);
   const globeEl = useRef(null);
@@ -66,8 +71,37 @@ export default function Home({ children }) {
     class: 'religione',
     key: 3,
   }];
+  const menuref = useRef(null);
+  const handleClickOutside = useCallback(
+    (event) => {
+      if (menuref.current && !menuref.current.contains(event.target)) {
+        // CLICK OUTSIDE
+        setViewMenu(false);
+      }
+      // CLICK INSIDE
+    },
+    [],
+  );
+  if (process.browser) useEventListener('mousedown', handleClickOutside);
   return (<>
     {/* title */}
+    {(router.asPath !== '/') && <>
+      <Spring from={{ left: -300, backgroundColor: 'trasparent' }} to={{ left: viewMenu ? 0 : -300 }}>
+        {(propsMenu) => <>
+          <a.div className={styles.menuSlide} style={propsMenu} ref={menuref}>
+            <div className={styles.menuflex}>
+
+            </div>
+          </a.div>
+        </>}
+      </Spring>
+      <div className={styles.buttonMenu}>
+        <Menu fill='white' onClick={() => setViewMenu(true)}/>
+      </div>
+      {viewMenu && <Spring from={{ opacity: 0 }} to={{ opacity: viewMenu ? 0.8 : 0 }}>{(bprops) => <>
+        <a.div className={styles.backgroundBlack} style={bprops}></a.div>
+      </>}</Spring>}
+    </>}
     <div className={styles.main}>
       {router.asPath === '/' && <> <Spring from={{
         top: titlepositionfrom ? '0%' : '50%',

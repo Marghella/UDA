@@ -71,3 +71,29 @@
   font-size: 3rem;
   font-family: 'Whitney Medium';
 }
+
+.absoluteButton {
+  
+
+  background-color: blue;
+}
+
+.absoluteButton {
+  position: absolute;
+  width: 50%;
+  height: 100px;
+  bottom: 10px;
+  color: white;
+  font-family: 'Whitney Medium';
+  font-size: 2rem;
+  border-radius: 50px;
+  overflow: hidden;
+  @include CenterFlex();
+  border: none;
+  border: 1px black solid;
+  span {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+}
