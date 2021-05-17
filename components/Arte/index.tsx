@@ -8,33 +8,49 @@ import {
 } from '../../public/images/logoarte';
 import styles from './styles/Arte.module.scss';
 
+function getRandom(arr, n) {
+  const result = new Array(n);
+  let len = arr.length;
+  const taken = new Array(len);
+  if (n > len) { throw new RangeError('getRandom: more elements taken than available'); }
+  // eslint-disable-next-line no-plusplus
+  while (n--) {
+    const x = Math.floor(Math.random() * len);
+    result[n] = arr[x in taken ? taken[x] : x];
+    // eslint-disable-next-line no-plusplus
+    taken[x] = --len in taken ? taken[len] : len;
+  }
+  return result;
+}
+
 export default function Arte() {
   const scissors = useRef(null);
   const [toggle, settoggle] = useState(false);
   const [clickLogo, setClickLogo] = useState(0);
-  const urlImages = [
+  const urlImagesnosorted = [
     {
-      url: '/images/esempi/bella.jpeg', width: 655, height: 131, key: 0,
+      url: '/images/esempi/bella.jpeg', width: 655, height: 131,
     },
     {
-      url: '/images/esempi/down.jpeg', width: 624, height: 163, key: 1,
+      url: '/images/esempi/down.jpeg', width: 624, height: 163,
+    },
+    { url: '/images/esempi/gallina.jpeg', width: 484, height: 160 },
+    {
+      url: '/images/esempi/grassotta.jpeg', width: 532, height: 158,
     },
     {
-      url: '/images/esempi/gallina.jpeg', width: 484, height: 160, key: 2,
+      url: '/images/esempi/handicappatona.jpeg', width: 530, height: 107,
     },
     {
-      url: '/images/esempi/grassotta.jpeg', width: 532, height: 158, key: 3,
+      url: '/images/esempi/latopositivo.jpeg', width: 664, height: 172,
     },
-    {
-      url: '/images/esempi/handicappatona.jpeg', width: 530, height: 107, key: 4,
-    },
-    {
-      url: '/images/esempi/latopositivo.jpeg', width: 664, height: 172, key: 5,
-    },
-    // { url: '/images/esempi/liberata.jpeg', width: 602, height: 244 },
-    // { url: '/images/esempi/trucco.jpeg', width: 527, height: 177 },
-    // { url: '/images/esempi/venezia.jpeg', width: 609, height: 154 },
+    { url: '/images/esempi/liberata.jpeg', width: 602, height: 244 },
+    { url: '/images/esempi/trucco.jpeg', width: 527, height: 177 },
+    { url: '/images/esempi/venezia.jpeg', width: 609, height: 154 },
   ];
+  const urlImages = getRandom(urlImagesnosorted, 6).map((x, i) => ({
+    url: x.url, width: x.width, height: x.height, key: i,
+  }));
   useEffect(() => {
     const int = setTimeout(() => {
       settoggle(true);
@@ -106,7 +122,7 @@ export default function Arte() {
         </div>
       </div>
       <div className={styles.sub}>
-        <button onClick={() => clickLogo !== 0 && setClickLogo((prev) => prev - 1)
+        <button disabled={clickLogo === 0} onClick={() => clickLogo !== 0 && setClickLogo((prev) => prev - 1)
         }>{'<'}</button>
         <button onClick={() => setClickLogo((prev) => prev + 1)}>{'>'}</button>
       </div>

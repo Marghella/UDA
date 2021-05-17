@@ -69,7 +69,7 @@ export default function Home({ children }) {
   return (<>
     {/* title */}
     <div className={styles.main}>
-      <Spring from={{
+      {router.asPath === '/' && <> <Spring from={{
         top: titlepositionfrom ? '0%' : '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
@@ -94,7 +94,7 @@ export default function Home({ children }) {
           </div>
         </>
         }
-      </Spring>
+      </Spring> </>}
       {(title && router.asPath === '/') && <div className={styles.menu}>
         <div className={styles.grid_container}>
           <Transition
