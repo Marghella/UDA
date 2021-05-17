@@ -7,19 +7,22 @@ import styles from './loghi.module.scss';
 interface LogoProps {
   otherClass?: string,
   animation: boolean,
+  contrast: boolean,
   other: any,
 }
 
-export default function LogoScienze({ otherClass, animation, ...other }:LogoProps) {
+export default function LogoScienze({
+  otherClass, animation, contrast, ...other
+}:LogoProps) {
   return <>
     <div className={styles.padding} {...other}>
-      <div className={styles.scienze}>
+      <div className={clsx(styles.scienze, contrast && styles.contrast)}>
         <Alto />
         <BassoDestra />
         <BassoSinsitra />
       </div>
     </div>
-    <Spring from={{ transform: 'rotate(0deg)' }} to={{ transform: animation ? 'rotate(10deg)' : 'rotate(0deg)' }}>
+    {!contrast && <Spring from={{ transform: 'rotate(0deg)' }} to={{ transform: animation ? 'rotate(10deg)' : 'rotate(0deg)' }}>
       {(props) => <animated.div className={clsx(styles.padding, styles.absright)} style={props}>
         <div className={styles.scienze}>
           <Alto />
@@ -27,6 +30,6 @@ export default function LogoScienze({ otherClass, animation, ...other }:LogoProp
           <BassoSinsitra />
         </div>
       </animated.div>}
-    </Spring>
+    </Spring>}
   </>;
 }

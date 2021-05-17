@@ -204,3 +204,14 @@
     height: 100px;
   }
 }
+
+.contrast {
+    background: none !important;
+    width: 34.5px !important;
+    height: 50px !important;
+    svg {
+      fill: black !important;
+      width: 34.5px !important;
+      height: 50px !important;
+    }
+  }

@@ -13,6 +13,7 @@ import {
   ScienzeLogo, StoriaLogo, ArteLogo, ReligioneLogo,
 } from '../../loghi/index';
 import Menu from '../../public/images/leftmenu/menu';
+import Close from '../../public/images/leftmenu/close';
 
 let Globe = () => null;
 // eslint-disable-next-line global-require
@@ -27,6 +28,7 @@ export default function Home({ children }) {
   const size = useWindowSize();
   const [titlepositionfrom, settitlepositionfrom] = useState(false);
   const [hover, setHover] = useState(undefined);
+  const [menuhover, setMenuhover] = useState(undefined);
   useEffect(() => {
     if (router.asPath !== '/') {
       settitlepositionfrom(true);
@@ -86,11 +88,50 @@ export default function Home({ children }) {
   return (<>
     {/* title */}
     {(router.asPath !== '/') && <>
-      <Spring from={{ left: -300, backgroundColor: 'trasparent' }} to={{ left: viewMenu ? 0 : -300 }}>
+      <Spring from={{ left: -400, backgroundColor: 'trasparent' }} to={{ left: viewMenu ? 0 : -400 }}>
         {(propsMenu) => <>
           <a.div className={styles.menuSlide} style={propsMenu} ref={menuref}>
+            <div style={{
+              left: 0, top: 0, display: 'flex',
+            }} >
+              <Close style={{ cursor: 'pointer' }} onClick={() => setViewMenu(false)} />
+              <span style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '20px', fontSize: '18px',
+              }}>Menù</span>
+            </div>
             <div className={styles.menuflex}>
-
+              <Spring from={{ width: '0%' }} to={{ width: viewMenu ? '100%' : '0%' }} config={config.molasses}>
+                {(lineprops) => <>
+                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 0 ? 'white' : 'black' }}>
+                    {(hoverpropss) => <> <Link href={'/religione'}><div style={{ cursor: 'pointer' }} className={styles.section}>
+                      <a.div style={hoverpropss} className={styles.sectiontext} onMouseEnter={() => setMenuhover(0)} onMouseLeave={() => setMenuhover(undefined)}>Religione</a.div>
+                    </div></Link>
+                    </>}
+                  </Spring>
+                  <a.hr className={styles.line} style={lineprops}/>
+                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 1 ? 'white' : 'black' }}>
+                    {(hoverpropss) => <> <Link href={'/scienze'}><div style={{ cursor: 'pointer' }} className={styles.section}>
+                      <a.div style={hoverpropss} className={styles.sectiontext} onMouseEnter={() => setMenuhover(1)} onMouseLeave={() => setMenuhover(undefined)}>Scienze</a.div>
+                    </div></Link>
+                    </>}
+                  </Spring>
+                  <a.hr className={styles.line} style={lineprops}/>
+                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 2 ? 'white' : 'black' }}>
+                    {(hoverpropss) => <> <Link href={'/arte'}><div style={{ cursor: 'pointer' }} className={styles.section}>
+                      <a.div style={hoverpropss} className={styles.sectiontext} onMouseEnter={() => setMenuhover(2)} onMouseLeave={() => setMenuhover(undefined)}>Arte</a.div>
+                    </div></Link>
+                    </>}
+                  </Spring>
+                  <a.hr className={styles.line} style={lineprops}/>
+                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 3 ? 'white' : 'black' }}>
+                    {(hoverpropss) => <> <Link href={'/storia'}><div style={{ cursor: 'pointer' }} className={styles.section}>
+                      <a.div style={hoverpropss} className={styles.sectiontext} onMouseEnter={() => setMenuhover(3)} onMouseLeave={() => setMenuhover(undefined)}>Storia</a.div>
+                    </div></Link>
+                    </>}
+                  </Spring>
+                  <a.hr className={styles.line} style={lineprops}/>
+                </>}
+              </Spring>
             </div>
           </a.div>
         </>}

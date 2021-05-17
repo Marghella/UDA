@@ -1,5 +1,6 @@
 import React from 'react';
 import { animated, Spring, config } from 'react-spring';
+import clsx from 'clsx';
 import {
   BracciaDestra, BracciaSinistra, CoccardaBianca, CoccardaCentro, CoccardaVerde, CoccardaRosso, CorniceOcchi, Iride, Occhi, Pergamenta1, Pergamenta2, Pergamenta3, Pergamenta4,
   Pergamenta5, Pergamenta6, Piede, ScrittaDestra, ScrittaDestra1, ScrittaSinistra, ScrittaSinistra1, ManoDestra,
@@ -13,10 +14,12 @@ interface LogoProps {
   other: any,
 }
 
-export default function LogoStoria({ otherClass, animation, ...other }:LogoProps) {
+export default function LogoStoria({
+  otherClass, animation, contrast, ...other
+}:LogoProps) {
   // TODO (se ne ho voglia) ingrandire mani
   return <>
-    <div className={styles.logo_storia}>
+    <div className={clsx(styles.logo_storia, contrast && styles.contrast)}>
       <div className={styles.relative}>
 
         <div className={styles.coccarda}>
