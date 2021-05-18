@@ -6,6 +6,7 @@ import {
 } from 'react-spring';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import clsx from 'clsx';
 import useWindowSize from '../../hooks/useWindowSize';
 import useEventListener from '../../hooks/useEventListener';
 import styles from './styles/Home.module.scss';
@@ -29,6 +30,7 @@ export default function Home({ children }) {
   const [titlepositionfrom, settitlepositionfrom] = useState(false);
   const [hover, setHover] = useState(undefined);
   const [menuhover, setMenuhover] = useState(undefined);
+  const [cardhover, setCardHover] = useState(undefined);
   useEffect(() => {
     if (router.asPath !== '/') {
       settitlepositionfrom(true);
@@ -96,34 +98,34 @@ export default function Home({ children }) {
             }} >
               <Close style={{ cursor: 'pointer' }} onClick={() => setViewMenu(false)} />
               <span style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '20px', fontSize: '18px',
-              }}>Menù</span>
+                display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '20px', fontSize: '18px', cursor: 'pointer',
+              }} onClick={() => router.push('/')}>Menù</span>
             </div>
             <div className={styles.menuflex}>
               <Spring from={{ width: '0%' }} to={{ width: viewMenu ? '100%' : '0%' }} config={config.molasses}>
                 {(lineprops) => <>
-                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 0 ? 'white' : 'black' }}>
+                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 0 ? 'blue' : 'black' }}>
                     {(hoverpropss) => <> <Link href={'/religione'}><div style={{ cursor: 'pointer' }} className={styles.section}>
                       <a.div style={hoverpropss} className={styles.sectiontext} onMouseEnter={() => setMenuhover(0)} onMouseLeave={() => setMenuhover(undefined)}>Religione</a.div>
                     </div></Link>
                     </>}
                   </Spring>
                   <a.hr className={styles.line} style={lineprops}/>
-                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 1 ? 'white' : 'black' }}>
+                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 1 ? 'blue' : 'black' }}>
                     {(hoverpropss) => <> <Link href={'/scienze'}><div style={{ cursor: 'pointer' }} className={styles.section}>
                       <a.div style={hoverpropss} className={styles.sectiontext} onMouseEnter={() => setMenuhover(1)} onMouseLeave={() => setMenuhover(undefined)}>Scienze</a.div>
                     </div></Link>
                     </>}
                   </Spring>
                   <a.hr className={styles.line} style={lineprops}/>
-                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 2 ? 'white' : 'black' }}>
+                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 2 ? 'blue' : 'black' }}>
                     {(hoverpropss) => <> <Link href={'/arte'}><div style={{ cursor: 'pointer' }} className={styles.section}>
                       <a.div style={hoverpropss} className={styles.sectiontext} onMouseEnter={() => setMenuhover(2)} onMouseLeave={() => setMenuhover(undefined)}>Arte</a.div>
                     </div></Link>
                     </>}
                   </Spring>
                   <a.hr className={styles.line} style={lineprops}/>
-                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 3 ? 'white' : 'black' }}>
+                  <Spring from={{ color: 'black' }} to={{ color: menuhover === 3 ? 'blue' : 'black' }}>
                     {(hoverpropss) => <> <Link href={'/storia'}><div style={{ cursor: 'pointer' }} className={styles.section}>
                       <a.div style={hoverpropss} className={styles.sectiontext} onMouseEnter={() => setMenuhover(3)} onMouseLeave={() => setMenuhover(undefined)}>Storia</a.div>
                     </div></Link>
@@ -170,7 +172,7 @@ export default function Home({ children }) {
         </>
         }
       </Spring> </>}
-      {(title && router.asPath === '/') && <div className={styles.menu}>
+      {/* {(title && router.asPath === '/') && <div className={styles.menu}>
         <div className={styles.grid_container}>
           <Transition
             items={menuIcons}
@@ -187,6 +189,35 @@ export default function Home({ children }) {
                 <Link href={logos.link}><animated.div style={stylesss} onMouseEnter={() => setHover(logos.key)} onMouseLeave={() => setHover(undefined)}>
                   {logos.logo}
                 </animated.div></Link>
+              </div>
+            </>}
+          </Transition>
+        </div>
+      </div>} */}
+      {(title && router.asPath === '/') && <div className={styles.menu}>
+        <div className={styles.gridCard}>
+          <Transition
+            items={menuIcons}
+            keys={(logo: any) => logo.key}
+            from={{
+              opacity: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 145, width: 100,
+            }}
+            enter={() => ({ opacity: 1 })}
+            config={{
+              duration: 2000,
+            }}>
+            {(stylesss, logos) => <>
+              <div className={styles[logos.class]}>
+                <Spring from={{ opacity: 0 }} to={{ opacity: cardhover === logos.key ? 0 : 1 }}>
+                  {(propsa) => <>
+                    <span className={styles.titleCard} onMouseEnter={() => setCardHover(logos.key)} onMouseLeave={() => setCardHover(undefined)}>{logos.class}</span>
+                    <a.div style={propsa} className={clsx(styles.sfondoopaco, styles[logos.class])} onMouseEnter={() => setCardHover(logos.key)} onMouseLeave={() => setCardHover(undefined)} />
+                  </>}
+                </Spring>
+
+                {/* <Link href={logos.link}><animated.div style={stylesss} onMouseEnter={() => setHover(logos.key)} onMouseLeave={() => setHover(undefined)}>
+                  {logos.logo}
+                </animated.div></Link> */}
               </div>
             </>}
           </Transition>

@@ -1,3 +1,4 @@
+@use '../../../styles/colors.scss';
 @import '../../../styles/mixins.scss';
 
 .main {
@@ -54,6 +55,78 @@
 .scienze { grid-area: scienze; }
 
 
+
+
+
+
+.gridCard {
+  display: grid;
+  grid-template-columns: 20vw 20vw 20vw 20vw;
+  grid-template-rows: 60vh;
+  gap: 0px 10px;
+  grid-template-areas:
+    "arte storia scienze religione";
+}
+
+.sfondoopaco {
+  position: absolute;
+  background-color: black;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  z-index: 89;
+}
+
+.arte {
+  grid-area: arte; 
+  border: 2px black solid;
+  position: relative;
+}
+.storia { 
+  grid-area: storia;
+  border: 2px black solid;
+  position: relative;
+
+}
+.scienze { 
+  grid-area: scienze;
+  border: 2px black solid;
+  position: relative;
+
+}
+.religione { 
+  grid-area: religione;
+  border: 2px black solid;
+  position: relative;
+}
+
+.titleCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  @include CenterFlex();
+  color: white;
+  z-index: 90;
+  font-size: 3rem;
+  text-transform: capitalize;
+  font-family: 'Whitney Medium';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// side menu 
 .buttonMenu {
   position: absolute;
   top: 0;
@@ -76,7 +149,7 @@
   position: absolute;
   width: calc(400px - 40px);
   height: calc(100% - 40px);
-  background-color: lighten(rgb(37, 50, 55), 30%);
+  background-color: white;
   left: 0;
   z-index: 1000;
   border-top-right-radius: 20px;
@@ -117,6 +190,7 @@
   justify-content: center;
   align-items: center;
   font-size: 40px;
+  margin-top: 20px;
   div {
     position: relative;
   }
@@ -130,3 +204,5 @@
   border: 1px solid black;
   width: 100%;
 }
+
+
