@@ -1,0 +1,76 @@
+@import '../../../styles/mixins.scss';
+.main {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  @include CenterFlex();
+
+  .relative {
+    position: relative;
+    @include CenterFlex();
+    div {
+      @include CenterFlex();
+    }
+    // Religione
+
+.logo_religione {
+  @include CenterFlex();
+  position: relative;
+  div {
+    position: absolute;
+  }
+  svg {
+    position: absolute;
+  }
+  .sup {
+    fill: #3f6f82;
+  }
+  .inf {
+    fill: #0eb0bb;
+  }
+  .foglie {
+    fill: #718d3b;
+  }
+  .ramo {
+    fill: #472b12;
+  }
+  .martelloc {
+    fill: #623613;
+  }
+  .martellos {
+    fill: #472b12;
+  }
+  .zampe {
+    fill: #773e1a;
+  }
+}
+  }
+
+  svg {
+    width: 500px;
+    height: 725px;
+  }
+
+}
+
+.ulivoPrincipale {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @include CenterFlex();
+  svg {
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+  }
+  .foglie {
+    fill: #718d3b;
+  }
+  .ramo {
+    fill: #472b12;
+  }
+}
