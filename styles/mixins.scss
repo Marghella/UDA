@@ -1,4 +1,5 @@
 //&  CTRL + K + 0 FOR COLLAPS ALL MIXINS. REVERSE CTRL + K + J
+@use 'colors.scss';
 @mixin NoDrag() {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
@@ -66,7 +67,7 @@
 @mixin Button1($width, $height) {
   font-family: "Whitney Medium";
   font-size: 18px !important;
-	background-color: #7289da;
+	background-color: colors.$body_color_sf1;
 	width: $width;
 	height: $height;
 	color: white;
@@ -82,7 +83,7 @@
     outline: none;
   }
   &:hover {
-    background-color: #768fe9;
+    background-color: colors.$body_color_sf2;
   }
 }
 

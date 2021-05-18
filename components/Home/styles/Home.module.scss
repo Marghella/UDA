@@ -6,6 +6,7 @@
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  background-color: white;
 }
 
 .title {
@@ -15,6 +16,7 @@
   width: 100vw;
   text-align: center;
   font-family: 'Whitney Bold';
+  color: black;
 }
 
 .earth {
@@ -61,12 +63,13 @@
 
 .gridCard {
   display: grid;
-  grid-template-columns: 20vw 20vw 20vw 20vw;
-  grid-template-rows: 60vh;
+  grid-template-columns: 250px 250px 250px 250px;
+  grid-template-rows: 400px;
   gap: 0px 10px;
   grid-template-areas:
     "arte storia scienze religione";
 }
+
 
 .sfondoopaco {
   position: absolute;
@@ -74,30 +77,47 @@
   opacity: 0.7;
   width: 100%;
   height: 100%;
-  z-index: 89;
+  z-index: 99;
+  display: block;
 }
+
+
+.sfondoopaco.arte {
+  background-color: colors.$green_object;
+}
+
+.sfondoopaco.storia {
+  background-color: colors.$lime_object;
+}
+.sfondoopaco.scienze {
+  background-color: colors.$quasi_giallo1;
+}
+.sfondoopaco.religione {
+  background-color: colors.$quasi_giallo2;
+}
+
 
 .arte {
   grid-area: arte; 
-  border: 2px black solid;
   position: relative;
+  overflow: hidden;
 }
 .storia { 
   grid-area: storia;
-  border: 2px black solid;
+  // border: 2px black solid; in animation
   position: relative;
+  overflow: hidden;
 
 }
 .scienze { 
   grid-area: scienze;
-  border: 2px black solid;
   position: relative;
-
+  overflow: hidden;
 }
 .religione { 
   grid-area: religione;
-  border: 2px black solid;
   position: relative;
+  overflow: hidden;
 }
 
 .titleCard {
@@ -109,15 +129,50 @@
   height: 100px;
   @include CenterFlex();
   color: white;
-  z-index: 90;
+  z-index: 100;
   font-size: 3rem;
   text-transform: capitalize;
   font-family: 'Whitney Medium';
 }
 
+.insidecard {
+  position: absolute;
+  z-index: 90;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
 
 
+.textcards {
+  position: absolute;
+  width: 98%;
+  height: 500px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px -4px 16px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Whitney Medium';
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  h1 {
+    text-transform: capitalize;
+  }
+  h2 {
+    text-align: center;
+  }
+}
 
+.arrow {
+  z-index: 200;
+  cursor: pointer;
+  @include Button1(40px, 40px);
+  fill: white;
+}
 
 
 
@@ -197,12 +252,21 @@
   .sectiontext {
     display: flex;    
     justify-content: right;
+    cursor: pointer;
   }
 }
 
-.line {
-  border: 1px solid black;
-  width: 100%;
+.line.arte {
+  border: 1px solid colors.$green_object;
+}
+.line.storia {
+  border: 1px solid colors.$lime_object;
+}
+.line.scienze {
+  border: 1px solid colors.$quasi_giallo1;
+}
+.line.religione {
+  border: 1px solid colors.$quasi_giallo2;
 }
 
 

@@ -41,7 +41,7 @@ export default function LogoStoria({
           <Pergamenta6 fill='#dddb8e' />
           <Piede fill='black'/>
         </div>
-        <Spring to={{ transform: animation ? 'translate(0px,10px)' : 'translate(0px,0px)' }} config={config.default}>
+        <Spring to={{ transform: animation ? 'translate(0px,10px)' : 'translate(0px,0px)' }} config={config.default} delay={500}>
           {(bracciodx) => <>
             <animated.div className={styles.bracciadestro} style={bracciodx}>
               <BracciaDestra fill='black' />
@@ -54,7 +54,7 @@ export default function LogoStoria({
               </animated.div>
             </animated.div>
           </>}</Spring>
-        <Spring to={{ transform: animation ? 'translate(0px,-10px)' : 'translate(0px,0px)' }}>
+        <Spring to={{ transform: animation ? 'translate(0px,-10px)' : 'translate(0px,0px)' }} delay={500}>
           {(bracciosx) => <>
             <animated.div className={styles.bracciasinistro} style={bracciosx}>
               <BracciaSinistra fill='black' />

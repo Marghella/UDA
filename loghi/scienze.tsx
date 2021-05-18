@@ -22,7 +22,7 @@ export default function LogoScienze({
         <BassoSinsitra />
       </div>
     </div>
-    {!contrast && <Spring from={{ transform: 'rotate(0deg)' }} to={{ transform: animation ? 'rotate(10deg)' : 'rotate(0deg)' }}>
+    {!contrast && <Spring from={{ transform: 'rotate(0deg)' }} to={{ transform: animation ? 'rotate(10deg)' : 'rotate(0deg)' }} delay={500}>
       {(props) => <animated.div className={clsx(styles.padding, styles.absright)} style={props}>
         <div className={styles.scienze}>
           <Alto />
