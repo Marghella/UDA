@@ -22,7 +22,7 @@ let Globe = () => null;
 // eslint-disable-next-line global-require
 if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
 
-export default function Home({ children }) {
+export default function Home({ children, dynamicColor }) {
   const router = useRouter();
   const [viewMenu, setViewMenu] = useState(false);
   const [color, setColor] = useState(false);
@@ -219,7 +219,7 @@ export default function Home({ children }) {
             )}
           </Spring>
           <div className={styles.buttonMenu}>
-            <Menu fill="white" onClick={() => setViewMenu(true)} />
+            <Menu fill={dynamicColor || 'white'} onClick={() => setViewMenu(true)} />
           </div>
           {viewMenu && (
             <Spring from={{ opacity: 0 }} to={{ opacity: viewMenu ? 0.8 : 0 }}>
@@ -343,6 +343,11 @@ export default function Home({ children }) {
                 )}
               </Transition>
             </div>
+            <Spring from={{ opacity: 0 }} to={{ opacity: title ? 1 : 0 }} config={{ duration: 1000 }}>
+              {(cr) => <>
+                <Link href={'/crediti'}><a.div style={cr} className={styles.crediti}>Crediti</a.div></Link>
+              </>}
+            </Spring>
           </div>
         )}
         {children}

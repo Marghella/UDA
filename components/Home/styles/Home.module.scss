@@ -176,6 +176,20 @@
 
 
 
+.crediti {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  height: 80px;
+  font-size: 30px;
+  background-color: colors.$quasi_giallo2;
+  cursor: pointer;
+  font-family: 'Whitney Medium';
+  @include CenterFlex();
+  color: white;
+}
+
 
 
 
@@ -196,7 +210,7 @@
   z-index: 999;
   cursor: pointer;
   &:hover {
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 

@@ -1,0 +1,34 @@
+@import '../../../styles/mixins.scss';
+.main {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+.padding {
+  padding: 50px;
+  width: calc(100% - 100px);
+  height: calc(100% - 100px); 
+}
+
+.content {
+  border: 2px solid white;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "titolo titolo"
+    "carte labirinto";
+  .carte { grid-area: carte; }
+  .labirinto { grid-area: labirinto; }
+  .titolo { 
+    grid-area: titolo;
+    color: white;
+    font-size: 3rem;
+    @include CenterFlex();
+    font-family: 'Whitney Medium';
+  }
+}
