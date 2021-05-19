@@ -95,16 +95,16 @@ export default function Religione() {
       delay={1000}>
         {(ulivogrande) => <>
           <Spring from={{ width: 100, height: 145, opacityy: 0 }} to={async (next) => {
-            await next({ width: finishedA ? 1000 : 100, height: finishedA ? 1450 : 145 });
+            await next({ width: finishedA ? 900 : 100, height: finishedA ? 1305 : 145 });
           }} delay={5000} >
             {({ opacityy, ...zoomulivo }) => <>
               <a.div className={styles.ulivoPrincipale} style={ulivogrande}>
                 {/* FOGLIE INTERAGIBILI */}
                 <Spring from={{
-                  opacity: 0, transform: 'translate(-133%, -54%)', width: 368, height: 492,
+                  opacity: 0, transform: 'translate(-125%, -54%)', width: 358, height: 487,
                 }} to={async (next) => {
-                  await next({ opacity: viewText === 0 ? 1 : 0, transform: viewText === 0 ? 'translate(-50%, -50%)' : 'translate(-133%, -54%)' });
-                  await next({ width: viewText === 0 ? 2000 : 368, height: viewText === 0 ? 2680 : 492 });
+                  await next({ opacity: viewText === 0 ? 1 : 0, transform: viewText === 0 ? 'translate(-50%, -50%)' : 'translate(-125%, -54%)' });
+                  await next({ width: viewText === 0 ? 2000 : 358, height: viewText === 0 ? 2680 : 487 });
                 }}>
                   {(adieuprops) => <>
                     <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(-605%, -95%) rotate(0deg)' }}>Mario</a.div>
@@ -129,13 +129,13 @@ export default function Religione() {
                 </Spring>
 
                 <Spring from={{
-                  opacity: 0, transform: 'translate(-51%, -122%) rotate(48deg)', width: 341, height: 491,
+                  opacity: 0, transform: 'translate(-52%, -185%) rotate(48deg)', width: 298, height: 232,
                 }} to={async (next) => {
-                  await next({ opacity: viewText === 1 ? 1 : 0, transform: viewText === 1 ? 'translate(-50%, -50%) rotate(0deg)' : 'translate(-51%, -122%) rotate(48deg)' });
-                  await next({ width: viewText === 1 ? 2000 : 368, height: viewText === 1 ? 2680 : 492 });
+                  await next({ opacity: viewText === 1 ? 1 : 0, transform: viewText === 1 ? 'translate(-50%, -50%) rotate(0deg)' : 'translate(-52%, -185%) rotate(48deg)' });
+                  await next({ width: viewText === 1 ? 2000 : 298, height: viewText === 1 ? 2680 : 232 });
                 }}>
                   {(adieuprops) => <>
-                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(-225%, -922%) rotate(0deg)' }}>Mario</a.div>
+                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(-189%, -835%) rotate(0deg)' }}>Pace</a.div>
                     <a.svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="1.14in"
@@ -156,10 +156,10 @@ export default function Religione() {
                 </Spring>
 
                 <Spring from={{
-                  opacity: 0, transform: 'translate(42%, -65%) rotate(152deg)', width: 327, height: 491,
+                  opacity: 0, transform: 'translate(42%, -64%) rotate(152deg)', width: 293, height: 492,
                 }} to={async (next) => {
-                  await next({ opacity: viewText === 2 ? 1 : 0, transform: viewText === 2 ? 'translate(-50%, -50%) rotate(0deg)' : 'translate(42%, -65%) rotate(152deg)' });
-                  await next({ width: viewText === 2 ? 2000 : 327, height: viewText === 2 ? 2680 : 492 });
+                  await next({ opacity: viewText === 2 ? 1 : 0, transform: viewText === 2 ? 'translate(-50%, -50%) rotate(0deg)' : 'translate(42%, -64%) rotate(152deg)' });
+                  await next({ width: viewText === 2 ? 2000 : 293, height: viewText === 2 ? 2680 : 492 });
                 }}>
                   {(adieuprops) => <>
                     <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(415%, -172%) rotate(0deg)' }}>Mario</a.div>
@@ -185,13 +185,13 @@ export default function Religione() {
                 {/* 3 */}
 
                 <Spring from={{
-                  opacity: 0, transform: 'translate(-34%, 15%) rotate(-161deg)', width: 386, height: 491,
+                  opacity: 0, transform: 'translate(-34%, 85%) rotate(-161deg)', width: 372, height: 211,
                 }} to={async (next) => {
-                  await next({ opacity: viewText === 3 ? 1 : 0, transform: viewText === 3 ? 'translate(-50%, -50%) rotate(0deg) ' : 'translate(-34%, 15%) rotate(-161deg)' });
-                  await next({ width: viewText === 3 ? 2000 : 386, height: viewText === 3 ? 2680 : 491 });
+                  await next({ opacity: viewText === 3 ? 1 : 0, transform: viewText === 3 ? 'translate(-50%, -50%) rotate(0deg) ' : 'translate(-34%, 85%) rotate(-161deg)' });
+                  await next({ width: viewText === 3 ? 2000 : 372, height: viewText === 3 ? 2680 : 211 });
                 }}>
                   {(adieuprops) => <>
-                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(185%, 505%) rotate(0deg)' }}>Mario</a.div>
+                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(185%, 733%) rotate(0deg)' }}>Mario</a.div>
                     <a.svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="1.14in"
