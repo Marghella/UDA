@@ -114,7 +114,19 @@ export default function Home({ children }) {
     },
     [],
   );
-  if (process.browser) useEventListener('mousedown', handleClickOutside);
+  const handleClickSpace = useCallback(
+    (ev) => {
+      console.log(ev.key);
+
+      if (ev.key === ' ') setTitle(true);
+    },
+    [],
+  );
+  if (process.browser) {
+    useEventListener('mousedown', handleClickOutside);
+    useEventListener('keydown', handleClickSpace);
+  }
+
   return (
     <>
       {/* title */}

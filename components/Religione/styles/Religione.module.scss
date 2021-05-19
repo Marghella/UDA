@@ -1,3 +1,4 @@
+@use '../../../styles/colors.scss';
 @import '../../../styles/mixins.scss';
 .main {
   position: absolute;
@@ -60,7 +61,6 @@
   @include CenterFlex();
   svg {
     position: absolute;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -73,4 +73,48 @@
   .ramo {
     fill: #472b12;
   }
+}
+
+.gobackbutton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 10000;
+  cursor: pointer;
+  @include CenterFlex();
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    fill: white;
+    opacity: 0.3;
+  }
+}
+
+.gobackbutton:hover {
+  svg {
+    opacity: 0.6;
+  }
+}
+
+.testosufoglia {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: colors.$blue_objects;
+  z-index: 902;
+  font-size: 50px;
+}
+
+.testofoglia {
+  position: absolute;
+  z-index: 903;
+  width: 100vw;
+  height: 100vh;
 }
