@@ -9,7 +9,7 @@ function SvgComponent(props) {
     >
       <path
         style={{
-          blockProgression: 'tb',
+          msBlockProgression: 'tb',
           textIndent: 0,
           textTransform: 'none',
         }}
@@ -19,7 +19,7 @@ function SvgComponent(props) {
       />
       <path
         style={{
-          blockProgression: 'tb',
+          msBlockProgression: 'tb',
           textIndent: 0,
           textTransform: 'none',
         }}
@@ -66,7 +66,7 @@ function SvgComponent(props) {
       </g>
       <path
         style={{
-          blockProgression: 'tb',
+          msBlockProgression: 'tb',
           textIndent: 0,
           textTransform: 'none',
         }}
@@ -76,7 +76,7 @@ function SvgComponent(props) {
       />
       <path
         style={{
-          blockProgression: 'tb',
+          msBlockProgression: 'tb',
           textIndent: 0,
           textTransform: 'none',
         }}

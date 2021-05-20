@@ -7,8 +7,8 @@ import styles from './loghi.module.scss';
 interface LogoProps {
   otherClass?: string,
   animation: boolean,
-  contrast: boolean,
-  other: any,
+  contrast?: boolean,
+  other?: any,
 }
 
 export default function LogoScienze({

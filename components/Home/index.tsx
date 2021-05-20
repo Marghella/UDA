@@ -22,7 +22,12 @@ let Globe = () => null;
 // eslint-disable-next-line global-require
 if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
 
-export default function Home({ children, dynamicColor }) {
+interface HomeProps {
+  children? : JSX.Element,
+  dynamicColor? : string,
+}
+
+export default function Home({ children, dynamicColor }:HomeProps) {
   const router = useRouter();
   const [viewMenu, setViewMenu] = useState(false);
   const [color, setColor] = useState(false);
@@ -132,7 +137,7 @@ export default function Home({ children, dynamicColor }) {
       {/* title */}
       {(router.asPath !== '/') && (
         <>
-          <Spring from={{ left: -400, backgroundColor: 'trasparent' }} to={{ left: viewMenu ? 0 : -400 }}>
+          <Spring from={{ left: -400, backgroundColor: 'trasparent' }} to={{ left: viewMenu ? 0 : -400, backgroundColor: 'trasparent' }}>
             {(propsMenu) => (
               <>
                 <a.div className={styles.menuSlide} style={propsMenu} ref={menuref}>

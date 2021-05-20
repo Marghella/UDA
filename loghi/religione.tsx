@@ -8,7 +8,8 @@ import styles from './loghi.module.scss';
 interface LogoProps {
   otherClass?: string,
   animation: boolean,
-  onClick(): void,
+  contrast?: boolean,
+  other?: any,
 }
 
 export default function LogoReligione({ otherClass, animation, ...other }:LogoProps) {

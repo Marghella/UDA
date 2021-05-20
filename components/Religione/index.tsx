@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Spring, a, config } from 'react-spring';
-import LogoReligione from '../../loghi/religione';
 import styles from './styles/Religione.module.scss';
-import useWindowSize from '../../hooks/useWindowSize';
 import {
   UccelloSuperiore, UccelloInferiore, FoglieUlivo, MartelloMarrone, MartelloChiaro, Zampe, RamoUlivo,
 } from '../../public/images/logoreligione/index';
@@ -15,7 +13,6 @@ export default function Religione() {
   const [finishedA, setFinishedA] = useState(false);
   const [viewText, setViewText] = useState(undefined);
   const [viewTitle, setViewTitle] = useState(false);
-  const refOlivo = useRef<React.SVGProps<SVGSVGElement>>(null);
   useEffect(() => {
     const i = setTimeout(() => {
       setAnimation(true);
@@ -254,7 +251,6 @@ export default function Religione() {
                       height="3.22in"
                       viewBox="0 0 303 322"
                       className={styles.ramo}
-                      ref={refOlivo}
                       style={{ ...zoomulivo, ...ramoprops }}
                     >
                       <path

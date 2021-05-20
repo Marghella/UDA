@@ -9,12 +9,13 @@ import styles from './loghi.module.scss';
 interface LogoProps {
   otherClass?: string,
   animation: boolean,
-  onClick(): void,
+  contrast?: boolean,
+  other?: any,
 }
 
-export default function LogoArte({ otherClass, animation, onClick }:LogoProps) {
+export default function LogoArte({ otherClass, animation }:LogoProps) {
   return <>
-    <div className={styles.logo} onClick={() => onClick}>
+    <div className={styles.logo}>
       <ForbiceDestraSVG className={clsx(styles.green)}/>
       <Spring from={{ transform: 'rotateZ(0deg)' }} to={{ transform: animation ? 'rotateZ(-15deg)' : 'rotateZ(0deg)' }} delay={500}>
         {(styless) => <a.div style={styless} className={styles.l}><ForbiceSinistraSVG className={clsx(styles.green, styles.cut)} /></a.div>}
