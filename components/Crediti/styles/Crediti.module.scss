@@ -22,6 +22,9 @@
   .subtitle {
     font-size: 2rem;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .ioete {
     font-size: 3rem;
@@ -61,6 +64,9 @@
 
   .linguaggi { 
     grid-area: linguaggi;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     svg {
       width: 100px;
       height: 100px;
@@ -69,6 +75,9 @@
    }
   .engine { 
     grid-area: engine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     svg {
       width: 100px;
       height: 100px;
@@ -77,6 +86,9 @@
    }
   .strumenti { 
     grid-area: strumenti;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     svg {
       width: 100px;
       height: 100px;
@@ -85,6 +97,9 @@
    }
   .librerie { 
     grid-area: librerie;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     svg {
       width: 100px;
       height: 100px;
@@ -102,9 +117,16 @@
 }
 
 .ag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 20px;
   color: white;
   &:visited {
     color: white;
   }
+}
+
+.github {
+  margin-top: 40px;
 }

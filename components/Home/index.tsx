@@ -242,7 +242,7 @@ export default function Home({ children, dynamicColor }) {
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
                 fontSize: 140 - ((size.width / 100) * 1),
-                color: color ? 'white' : 'black',
+                color: 'white',
               }}
               to={{
                 top: title ? '0%' : '50%', left: '50%', transform: title ? 'translate(-50%, 0)' : 'translate(-50%, -50%)', fontSize: title ? ((size.width / 100) * 4) : ((size.width / 100) * 5), color: '#0F6F8C',

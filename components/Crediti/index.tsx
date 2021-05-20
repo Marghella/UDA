@@ -48,7 +48,7 @@ export default function index({ setDynamicColor }) {
             </div>
             <div className={styles.engine}>
               <div className={styles.subtitle}>
-            Engine
+            Engines
               </div>
               <div style={{ display: 'flex' }}>
                 <div className={styles.sect_logo}>
@@ -57,7 +57,7 @@ export default function index({ setDynamicColor }) {
                 </div>
                 <div className={styles.sect_logo}>
                   <NodeJS />
-                  <span>NodeJS</span>
+                  <span>Node.js</span>
                 </div>
                 <div className={styles.sect_logo}>
                   <Reactt />

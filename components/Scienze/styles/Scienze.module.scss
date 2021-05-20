@@ -73,13 +73,8 @@
 }
 
 .absoluteButton {
-  
-
-  background-color: blue;
-}
-
-.absoluteButton {
   position: absolute;
+  background-color: blue;
   width: 50%;
   height: 100px;
   bottom: 10px;
@@ -91,6 +86,7 @@
   @include CenterFlex();
   border: none;
   border: 1px black solid;
+  cursor: pointer;
   span {
     overflow: hidden;
     white-space: nowrap;

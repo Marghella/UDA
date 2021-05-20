@@ -8,7 +8,7 @@ export default function gioco() {
     <Head>
       <title>Video Giochi</title>
     </Head>
-    <Home dynamicColor={'blue'}>
+    <Home dynamicColor={'white'}>
       <Giochi />
     </Home>
   </>
