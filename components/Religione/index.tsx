@@ -265,7 +265,7 @@ export default function Religione() {
           </Spring>
         </>}
       </Spring>
-      <div className={styles.gobackbutton} onClick={() => { setViewText(undefined); setViewTitle(false); }}>
+      {viewText !== undefined && <div className={styles.gobackbutton} onClick={() => { setViewText(undefined); setViewTitle(false); }}>
         <Bastoncino />
         <PFoglia />
         <SecFoglia />
@@ -274,7 +274,7 @@ export default function Religione() {
         <QuiFoglia />
         <SesFoglia />
         <SetFoglia />
-      </div>
+      </div>}
       {/* PRIMA FOGLIA */}
       <Spring from={{ backgroundColor: 'white', display: 'none' }} to={{ backgroundColor: viewText !== undefined ? '#718d3b' : 'white', display: viewText !== undefined ? 'block' : 'none' }} delay={viewText !== undefined ? 1000 : 0}>
         {(bprops) => <>

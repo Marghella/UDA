@@ -6,7 +6,7 @@ import Storia from '../components/Storia_Filosofia';
 export default function storia() {
   return (<>
     <Head><title>Storia e Filosofia</title></Head>
-    <Home>
+    <Home dynamicColor={'blue'}>
       <Storia />
     </Home>
   </>
