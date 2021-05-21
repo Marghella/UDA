@@ -34,6 +34,11 @@ export default function Religione() {
   }, [viewText]);
   return (
     <div className={styles.main}>
+      {/* SFONDO */}
+      <img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ left: 20 }}/>
+      <img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ right: 150 }}/>
+      <img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ top: 30, left: 350 }}/>
+      <img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ bottom: 30, right: 40 }}/>
       <div className={styles.relative}>
         <div className={styles.logo_religione}>
           {/* JUMP */}

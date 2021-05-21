@@ -5,7 +5,7 @@
   width: 100vw;
   height: 100vh;
   @include CenterFlex();
-
+  background-color: #87cefa;
   .relative {
     position: relative;
     @include CenterFlex();
@@ -117,4 +117,8 @@
   z-index: 903;
   width: 100vw;
   height: 100vh;
+}
+
+.nuvola {
+  position: absolute;
 }
