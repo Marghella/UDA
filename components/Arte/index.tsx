@@ -44,11 +44,29 @@ export default function Arte() {
     {
       url: '/images/esempi/latopositivo.jpeg', width: 664, height: 172,
     },
-    { url: '/images/esempi/liberata.jpeg', width: 602, height: 244 },
     { url: '/images/esempi/trucco.jpeg', width: 527, height: 177 },
-    { url: '/images/esempi/venezia.jpeg', width: 609, height: 154 },
+    { url: '/images/esempi/zbrutta.jpeg', width: 662, height: 197 },
+    { url: '/images/esempi/zcagareeee.jpeg', width: 667, height: 216 },
+    { url: '/images/esempi/zcesso.jpeg', width: 682, height: 201 },
+    { url: '/images/esempi/zclownpopi.jpeg', width: 716, height: 228 },
+    { url: '/images/esempi/zesistenza.jpeg', width: 787, height: 236 },
+    { url: '/images/esempi/zlocapisci.jpeg', width: 744, height: 202 },
+    { url: '/images/esempi/zstupida.jpeg', width: 518, height: 142 },
+    { url: '/images/esempi/ztavola.jpeg', width: 618, height: 157 },
+    { url: '/images/esempi/zthisistheautist.jpeg', width: 696, height: 239 },
+    { url: '/images/esempi/zveste.jpeg', width: 788, height: 234 },
+    { url: '/images/esempi/zvita.jpeg', width: 471, height: 120 },
   ];
-  const urlImages = getRandom(urlImagesnosorted, 6).map((x, i) => ({
+
+  const urlImagesUN = urlImagesnosorted.slice(0, 6).map((x, i) => ({
+    url: x.url, width: x.width, height: x.height, key: i,
+  }));
+
+  const urlImagesDU = urlImagesnosorted.slice(6, 12).map((x, i) => ({
+    url: x.url, width: x.width, height: x.height, key: i,
+  }));
+
+  const urlImagesTR = urlImagesnosorted.slice(12, 18).map((x, i) => ({
     url: x.url, width: x.width, height: x.height, key: i,
   }));
   useEffect(() => {
@@ -68,7 +86,7 @@ export default function Arte() {
     <div className={styles.main}>
       <div className={styles.title}></div>
       <div className={styles.contenuto}>
-        <div className={clsx(styles.contenuto, clickLogo > 0 && styles.C, clickLogo === 3 && styles.wrap)} onClick={(e) => handleClick(e)}>
+        <div className={clsx(styles.contenuto, clickLogo > 0 && styles.C, (clickLogo >= 3 && clickLogo < 6) && styles.wrap)} onClick={(e) => handleClick(e)}>
           {clickLogo === 0 && <>
             <ForbiceDestraSVG className={styles.forbiceDestra} ref={scissors} />
             <ForbiceSinistraSVG className={clsx(styles.forbiceSinistra, toggle && styles.cut)} />
@@ -104,7 +122,7 @@ export default function Arte() {
             </h4></>}
           {clickLogo === 3 && <>
             <Transition
-              items={urlImages}
+              items={urlImagesUN}
               keys={(item: any) => item.key}
               from={{ opacity: 0, height: 0, width: 0 }}
               leave={{ opacity: 0 }}
@@ -119,12 +137,54 @@ export default function Arte() {
               )}
             </Transition>
           </>}
+          {clickLogo === 4 && <>
+            <Transition
+              items={urlImagesDU}
+              keys={(item: any) => item.key}
+              from={{ opacity: 0, height: 0, width: 0 }}
+              leave={{ opacity: 0 }}
+              enter={({ width, height }) => ({ opacity: 1, width, height })}
+            >
+              {(styless, item) => (
+                <div className={styles.fixed}>
+                  <animated.div >
+                    <a.img src={item.url} style={styless}/>
+                  </animated.div>
+                </div>
+              )}
+            </Transition>
+          </>}
+          {clickLogo === 5 && <>
+            <Transition
+              items={urlImagesTR}
+              keys={(item: any) => item.key}
+              from={{ opacity: 0, height: 0, width: 0 }}
+              leave={{ opacity: 0 }}
+              enter={({ width, height }) => ({ opacity: 1, width, height })}
+            >
+              {(styless, item) => (
+                <div className={styles.fixed}>
+                  <animated.div >
+                    <a.img src={item.url} style={styless}/>
+                  </animated.div>
+                </div>
+              )}
+            </Transition>
+          </>}
+          {clickLogo === 6 && <>
+            <h2>Il Manifesto della comunicazione non ostile è un impegno
+              di responsabilità condivisa.
+              Vuole favorire comportamenti rispettosi e civili.
+              Vuole che la rete sia un luogo accogliente e sicuro per
+              tutti.
+            </h2>
+          </>}
         </div>
       </div>
       <div className={styles.sub}>
         <button disabled={clickLogo === 0} onClick={() => clickLogo !== 0 && setClickLogo((prev) => prev - 1)
         }>{'<'}</button>
-        <button onClick={() => setClickLogo((prev) => prev + 1)}>{'>'}</button>
+        <button disabled={clickLogo === 6} onClick={() => setClickLogo((prev) => prev + 1)}>{'>'}</button>
       </div>
     </div>
     <Spring from={{ bottom: -200 }} to={{ bottom: clickLogo !== 0 ? 0 : -200 }}>

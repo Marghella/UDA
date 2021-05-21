@@ -35,10 +35,19 @@ export default function Religione() {
   return (
     <div className={styles.main}>
       {/* SFONDO */}
-      <img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ left: 20 }}/>
-      <img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ right: 150 }}/>
-      <img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ top: 30, left: 350 }}/>
-      <img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ bottom: 30, right: 40 }}/>
+      <Spring loop from={{ left: 1000 }} to={{ left: 3000 }} config={{ ...config.molasses, duration: 100000 }}>
+        {(x) => <>
+          <a.img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ ...x, top: 50, marginLeft: -2200 }}/>
+          <a.img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ ...x, top: 650, marginLeft: -2000 }}/>
+          <a.img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{
+            ...x, top: 300, marginLeft: -1500, opacity: 0.8,
+          }}/>
+          <a.img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ ...x, top: 450, marginLeft: -1000 }}/>
+          <a.img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ ...x, top: 200, marginLeft: -500 }}/>
+          <a.img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ ...x, top: 850 }}/>
+          <a.img className={styles.nuvola} src={'https://awv3node-homepage.surge.sh/build/assets/cloud.svg'} style={{ ...x, top: 10, marginLeft: -200 }}/>
+        </>}
+      </Spring>
       <div className={styles.relative}>
         <div className={styles.logo_religione}>
           {/* JUMP */}
