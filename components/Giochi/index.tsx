@@ -15,7 +15,7 @@ export default function index() {
               </Spring>
               <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} delay={600} config={config.molasses}>
                 {(sectionprops) => <><a.div className={styles.carte} style={sectionprops}>
-                  <div className={styles.title}>Carte</div>
+                  <div className={styles.title}>Carte (C# in ambiente Unity)</div>
                   <div className={styles.videosection}>
                     <img src={require('public/videos/gif/Carte.gif')} />
                   </div>
@@ -25,7 +25,7 @@ export default function index() {
                   </div>
                 </a.div>
                 <a.div className={styles.labirinto} style={sectionprops}>
-                  <div className={styles.title}>Labirinto</div>
+                  <div className={styles.title}>Labirinto (Visual Basic)</div>
                   <div className={styles.videosection}>
                     <img src={require('public/videos/gif/Labirinto.gif')} />
                   </div>

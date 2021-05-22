@@ -12,17 +12,39 @@
 .title {
   position: absolute;
   z-index: 1000;
-  height: 50px;
+  height: 100px;
   width: 100vw;
   text-align: center;
   font-family: 'Whitney Bold';
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+  }
 }
 
 .earth {
   margin: 0;
 }
 
+
+.globe {
+  margin: 0;
+  width: 40px;
+  canvas {
+    width: 40px;
+    margin: 0 !important;
+    display: unset !important;
+  }
+  div {
+    margin: 0;
+    display: unset !important;
+  }
+}
 //Menu
 
 .menu {

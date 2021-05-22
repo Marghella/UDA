@@ -9,7 +9,7 @@ export default function index({ setDynamicColor }) {
   setDynamicColor('#0F6F8C');
   const libraries = ['react-spring (animazioni)',
     'clsx (classi dinamiche)',
-    'next-videos (import video)',
+    'next-images (gif)',
     'react-globe.gl (globo interattivo)'];
   return (
     <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>

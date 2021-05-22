@@ -92,7 +92,7 @@ export default function Arte() {
             <ForbiceSinistraSVG className={clsx(styles.forbiceSinistra, toggle && styles.cut)} />
             <LineaTraggiataSVG className={styles.lineatratteggiata} />
             <NuvolaSVG className={styles.nuvola}/>
-            <ScrittaSVG className={styles.scritta}/>
+            <ScrittaSVG className={clsx(styles.scritta, toggle && styles.compari)}/>
           </>}
           {clickLogo === 1 && <><h1>1. Virtuale è reale</h1>
             <h2>Dico e scrivo in rete solo cose che ho il coraggio di dire di persona.</h2>

@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 import {
-  useSprings, animated, to as interpolate, Spring,
+  useSprings, animated, to as interpolate, Spring, config,
 } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
 import styles from './styles/Storia_Filosofia.module.scss';
@@ -10,11 +10,20 @@ const cards = [
   <div key={0} className={styles.mainUno}>
     <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
       {(vprops) => <>
-        <animated.em style={vprops}>Vonazzo</animated.em>
+        <animated.em style={vprops}><i>L&apos;uomo è per natura un animale politico</i></animated.em>
       </>}
     </Spring>
   </div>,
-  <div key={1}>Scema</div>,
+  <div key={1} className={styles.mainUno}>
+    <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
+      {(vprops) => <>
+        <animated.em style={vprops}><i>è evidente che, per tutto
+il tempo in cui gli uomini vivono senza un potere comune che li tenga soggiogati, si
+trovano in quella condizione chiamata guerra e questa guerra è tale che ogni uomo
+è contro ogni uomo</i></animated.em>
+      </>}
+    </Spring>
+  </div>,
   <div key={2}>Ti</div>,
   <div key={3}>Voglio</div>,
   <div key={4}>Tanto</div>,
@@ -53,18 +62,22 @@ export default function Deck() {
     if (!down && gone.size === cards.length) setTimeout(() => gone.clear() || set((i) => to(i)), 600);
   });
   return <>
-    <div className={styles.main}>
-      {props.map(({
-        x, y, rot, scale,
-      }, i) => (<>
-        <animated.div key={i} style={{ x, y }}>
-          {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-          <animated.div {...bind(i)} style={{ transform: interpolate([rot, scale], trans) }}>
-            {cards[i]}
-          </animated.div>
+    <Spring from={{ opacity: 0 }} to={{ opacity: 1 }} config={config.molasses}>
+      {(sprops) => <>
+        <animated.div className={styles.main} style={sprops}>
+          {props.map(({
+            x, y, rot, scale,
+          }, i) => (<>
+            <animated.div key={i} style={{ x, y }}>
+              {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
+              <animated.div {...bind(i)} style={{ transform: interpolate([rot, scale], trans) }}>
+                {cards[i]}
+              </animated.div>
+            </animated.div>
+          </>
+          ))}
         </animated.div>
-      </>
-      ))}
-    </div>
+      </>}
+    </Spring>
   </>;
 }

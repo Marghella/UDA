@@ -148,7 +148,7 @@ export default function Home({ children, dynamicColor }:HomeProps) {
                     <Close style={{ cursor: 'pointer' }} onClick={() => setViewMenu(false)} />
                     <span
                       style={{
-                        display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '20px', fontSize: '18px', cursor: 'pointer',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '20px', cursor: 'pointer',
                       }}
                       onClick={() => router.push('/')}
                     >
@@ -257,14 +257,13 @@ export default function Home({ children, dynamicColor }:HomeProps) {
               {(styless) => (
                 <>
                   <animated.div className={styles.title} style={styless} onClick={() => { setTitle(true); if (router.asPath !== '/') router.push('/'); }}>
-                  IL MO
-                    {/* <Globe
-            ref={globeEl}
-            globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
-            width={title ? ((size.width / 100) * 3.5) : ((size.width / 100) * 5)}
-            height={title ? ((size.width / 100) * 3.5) : ((size.width / 100) * 5)}
-            backgroundColor='#EDF0E6'
-          /> */}
+                  IL M<Globe
+                      ref={globeEl}
+                      globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
+                      width={title ? ((size.width / 100) * 3.5) : ((size.width / 100) * 5)}
+                      height={title ? ((size.width / 100) * 3.5) : ((size.width / 100) * 5)}
+                      backgroundColor="rgba(0,0,0,0)"
+                    />
                   NDO CHE VORREI
                   </animated.div>
                   <div className={styles.earth} />
@@ -275,28 +274,6 @@ export default function Home({ children, dynamicColor }:HomeProps) {
 
           </>
         )}
-        {/* {(title && router.asPath === '/') && <div className={styles.menu}>
-        <div className={styles.grid_container}>
-          <Transition
-            items={menuIcons}
-            keys={(logo: any) => logo.key}
-            from={{
-              opacity: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', height: 145, width: 100,
-            }}
-            enter={() => ({ opacity: 1 })}
-            config={{
-              duration: 2000,
-            }}>
-            {(stylesss, logos) => <>
-              <div className={styles[logos.class]}>
-                <Link href={logos.link}><animated.div style={stylesss} onMouseEnter={() => setHover(logos.key)} onMouseLeave={() => setHover(undefined)}>
-                  {logos.logo}
-                </animated.div></Link>
-              </div>
-            </>}
-          </Transition>
-        </div>
-      </div>} */}
         {(title && router.asPath === '/') && (
           <div className={styles.menu}>
             <div className={styles.gridCard}>

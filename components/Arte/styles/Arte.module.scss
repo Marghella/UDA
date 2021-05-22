@@ -10,7 +10,13 @@
 }
 
 .scritta {
+  opacity: 0;
   fill: #0D637D;
+}
+
+.scritta.compari {
+  animation: scissormove 1.5s ease-in-out ;
+  opacity: 1;
 }
 
 .forbiceDestra {

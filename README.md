@@ -1,5 +1,5 @@
 # UDA 2021 [ITA]
-Progetto scolastico UDA in collaborazione con [CarbonatoCobaloso](https://github.com/CarbonatoCobaltoso)
+Progetto scolastico UDA in collaborazione con [Alessia Vonazzo aka CarbonatoCobaltoso](https://github.com/CarbonatoCobaltoso)
 ## Installazione
 
 Scarica i file e usa yarn
