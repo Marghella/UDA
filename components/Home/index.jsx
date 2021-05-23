@@ -22,12 +22,12 @@ let Globe = () => null;
 // eslint-disable-next-line global-require
 if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
 
-interface HomeProps {
-  children? : JSX.Element,
-  dynamicColor? : string,
-}
+// interface HomeProps {
+//   children? : JSX.Element,
+//   dynamicColor? : string,
+// }
 
-export default function Home({ children, dynamicColor }:HomeProps) {
+export default function Home({ children, dynamicColor }) {
   const router = useRouter();
   const [viewMenu, setViewMenu] = useState(false);
   const [color, setColor] = useState(false);
@@ -279,7 +279,7 @@ export default function Home({ children, dynamicColor }:HomeProps) {
             <div className={styles.gridCard}>
               <Transition
                 items={menuIcons}
-                keys={(logo: any) => logo.key}
+                keys={(logo) => logo.key}
                 from={{
                   opacity: 0,
                 }}

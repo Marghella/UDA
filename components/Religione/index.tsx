@@ -118,7 +118,7 @@ export default function Religione() {
                   await next({ width: viewText === 0 ? 2000 : 358, height: viewText === 0 ? 2680 : 487 });
                 }}>
                   {(adieuprops) => <>
-                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(-605%, -95%) rotate(0deg)' }}>Mario</a.div>
+                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(-236%, -95%) rotate(23deg)' }}>Il dovere</a.div>
                     <a.svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="1.14in"
@@ -146,7 +146,7 @@ export default function Religione() {
                   await next({ width: viewText === 1 ? 2000 : 298, height: viewText === 1 ? 2680 : 232 });
                 }}>
                   {(adieuprops) => <>
-                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(-189%, -835%) rotate(0deg)' }}>Pace</a.div>
+                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(-46%, -698%) rotate(73deg)' }}>La pace</a.div>
                     <a.svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="1.14in"
@@ -173,7 +173,7 @@ export default function Religione() {
                   await next({ width: viewText === 2 ? 2000 : 293, height: viewText === 2 ? 2680 : 492 });
                 }}>
                   {(adieuprops) => <>
-                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(415%, -172%) rotate(0deg)' }}>Mario</a.div>
+                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(49%, -176%) rotate(0deg)' }}>Giustizia Sociale</a.div>
                     <a.svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="1.14in"
@@ -202,7 +202,7 @@ export default function Religione() {
                   await next({ width: viewText === 3 ? 2000 : 372, height: viewText === 3 ? 2680 : 211 });
                 }}>
                   {(adieuprops) => <>
-                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(185%, 733%) rotate(0deg)' }}>Mario</a.div>
+                    <a.div className={styles.testosufoglia} style={{ opacity: viewTitle ? 1 : 0, transform: 'translate(-33%, 551%) rotate(44deg)' }}>Impegno Politico</a.div>
                     <a.svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="1.14in"
@@ -293,7 +293,54 @@ export default function Religione() {
       <Spring from={{ backgroundColor: 'white', display: 'none' }} to={{ backgroundColor: viewText !== undefined ? '#718d3b' : 'white', display: viewText !== undefined ? 'block' : 'none' }} delay={viewText !== undefined ? 1000 : 0}>
         {(bprops) => <>
           <a.div className={styles.testofoglia} style={bprops}>
-            <em>MM</em>
+            {viewText === 0 && <>
+              <div className={styles.titolo}>IL DOVERE DI MIGLIORARE IL MONDO ATTRAVERSO I DIRITTI POLITICI, SOCIALI ED ECONOMICI</div>
+              <div className={styles.content}>
+                <div className={styles.sub}>
+                  <ul className={styles.ul}>
+                    <li>DOVERE: Essere Obbligati? Non essere liberi?</li>
+                    <li>RESPONSABILITÀ: Di chi e di cosa dobbiamo essere responsabili?</li>
+                    <li>BENE COMUNE: Che cos'è? Come si può realizzare?</li>
+                  </ul>
+                </div>
+              </div>
+            </>}
+            {viewText === 1 && <>
+              <div className={styles.titolo}>LA DIFFICILE CONQUISTA DELLA PACE</div>
+              <div className={styles.content}>
+                <div className={styles.sub}>
+                  <ul className={styles.ul}>
+                    <li>PACE: Assenza di guerra o cessazione di un conflitto?</li>
+                    <li>GUERRA: Come risolvere i conflitti senza ricorrere alla guerra?</li>
+                    <li>DIALOGO: C'è legame tra dialogo e bene comune?</li>
+                  </ul>
+                </div>
+              </div>
+            </>}
+            {viewText === 2 && <>
+              <div className={styles.titolo}>LA GIUSTIZIA SOCIALE – LA LEGALITÀ</div>
+              <div className={styles.content}>
+                <div className={styles.sub}>
+                  <ul className={styles.ul}>
+                    <li>GIUSTIZIA: È giusto colui che rispetta la legge?</li>
+                    <li>LEGALITÀ: Esistono leggi ingiuste?</li>
+                    <li>DIFFERENZE: Giustizia retribuitiva e giustizia distributiva</li>
+                  </ul>
+                </div>
+              </div>
+            </>}
+            {viewText === 3 && <>
+              <div className={styles.titolo}>L'IMPEGNO POLITICO</div>
+              <div className={styles.content}>
+                <div className={styles.sub}>
+                  <ul className={styles.ul}>
+                    <li>POLITICA: Cosa si intende per politica?</li>
+                    <li>DIFFERENZE: Politica ed Etica</li>
+                    <li>DISTINZIONE: Sfera politica e Sfera religiosa</li>
+                  </ul>
+                </div>
+              </div>
+            </>}
           </a.div>
         </>}
       </Spring>

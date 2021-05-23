@@ -107,18 +107,41 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: colors.$blue_objects;
+  color: white;
   z-index: 902;
-  font-size: 50px;
-}
-
-.testofoglia {
-  position: absolute;
-  z-index: 903;
-  width: 100vw;
-  height: 100vh;
+  font-size: 40px;
 }
 
 .nuvola {
   position: absolute;
+}
+
+//
+
+.testofoglia {
+  position: absolute;
+  z-index: 903;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  color: white;
+  padding: 50px;
+  font-family: 'Whitney Medium';
+}
+
+.titolo {
+  font-size: 4.5rem;
+  width: 100%;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.content {
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+.ul {
+  li {
+    margin: 100px;
+  }
 }

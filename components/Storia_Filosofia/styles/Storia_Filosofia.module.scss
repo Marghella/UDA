@@ -9,22 +9,23 @@
     sans-serif;
   position: fixed;
   overflow: hidden;
-  background: rgb(233,223,196);
+  // background: rgb(233,223,196);
 
-  background: -moz-linear-gradient(left, rgba(233,223,196,1) 0%, rgba(233,223,196,1) 1%, rgba(237,227,200,1) 2%, rgba(237,227,200,1) 24%, rgba(235,221,195,1) 25%, rgba(233,223,196,1) 48%, rgba(235,221,195,1) 49%, rgba(230,216,189,1) 52%, rgba(230,216,189,1) 53%, rgba(233,219,192,1) 54%, rgba(230,216,189,1) 55%, rgba(230,216,189,1) 56%, rgba(233,219,192,1) 57%, rgba(230,216,189,1) 58%, rgba(230,216,189,1) 73%, rgba(233,219,192,1) 74%, rgba(233,219,192,1) 98%, rgba(235,221,195,1) 100%);
+  // background: -moz-linear-gradient(left, rgba(233,223,196,1) 0%, rgba(233,223,196,1) 1%, rgba(237,227,200,1) 2%, rgba(237,227,200,1) 24%, rgba(235,221,195,1) 25%, rgba(233,223,196,1) 48%, rgba(235,221,195,1) 49%, rgba(230,216,189,1) 52%, rgba(230,216,189,1) 53%, rgba(233,219,192,1) 54%, rgba(230,216,189,1) 55%, rgba(230,216,189,1) 56%, rgba(233,219,192,1) 57%, rgba(230,216,189,1) 58%, rgba(230,216,189,1) 73%, rgba(233,219,192,1) 74%, rgba(233,219,192,1) 98%, rgba(235,221,195,1) 100%);
     
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(233,223,196,1)), color-stop(1%,rgba(233,223,196,1)), color-stop(2%,rgba(237,227,200,1)), color-stop(24%,rgba(237,227,200,1)), color-stop(25%,rgba(235,221,195,1)), color-stop(48%,rgba(233,223,196,1)), color-stop(49%,rgba(235,221,195,1)), color-stop(52%,rgba(230,216,189,1)), color-stop(53%,rgba(230,216,189,1)), color-stop(54%,rgba(233,219,192,1)), color-stop(55%,rgba(230,216,189,1)), color-stop(56%,rgba(230,216,189,1)), color-stop(57%,rgba(233,219,192,1)), color-stop(58%,rgba(230,216,189,1)), color-stop(73%,rgba(230,216,189,1)), color-stop(74%,rgba(233,219,192,1)), color-stop(98%,rgba(233,219,192,1)), color-stop(100%,rgba(235,221,195,1)));
+  // background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(233,223,196,1)), color-stop(1%,rgba(233,223,196,1)), color-stop(2%,rgba(237,227,200,1)), color-stop(24%,rgba(237,227,200,1)), color-stop(25%,rgba(235,221,195,1)), color-stop(48%,rgba(233,223,196,1)), color-stop(49%,rgba(235,221,195,1)), color-stop(52%,rgba(230,216,189,1)), color-stop(53%,rgba(230,216,189,1)), color-stop(54%,rgba(233,219,192,1)), color-stop(55%,rgba(230,216,189,1)), color-stop(56%,rgba(230,216,189,1)), color-stop(57%,rgba(233,219,192,1)), color-stop(58%,rgba(230,216,189,1)), color-stop(73%,rgba(230,216,189,1)), color-stop(74%,rgba(233,219,192,1)), color-stop(98%,rgba(233,219,192,1)), color-stop(100%,rgba(235,221,195,1)));
 
-  background: -webkit-linear-gradient(left, rgba(233,223,196,1) 0%,rgba(233,223,196,1) 1%,rgba(237,227,200,1) 2%,rgba(237,227,200,1) 24%,rgba(235,221,195,1) 25%,rgba(233,223,196,1) 48%,rgba(235,221,195,1) 49%,rgba(230,216,189,1) 52%,rgba(230,216,189,1) 53%,rgba(233,219,192,1) 54%,rgba(230,216,189,1) 55%,rgba(230,216,189,1) 56%,rgba(233,219,192,1) 57%,rgba(230,216,189,1) 58%,rgba(230,216,189,1) 73%,rgba(233,219,192,1) 74%,rgba(233,219,192,1) 98%,rgba(235,221,195,1) 100%);
+  // background: -webkit-linear-gradient(left, rgba(233,223,196,1) 0%,rgba(233,223,196,1) 1%,rgba(237,227,200,1) 2%,rgba(237,227,200,1) 24%,rgba(235,221,195,1) 25%,rgba(233,223,196,1) 48%,rgba(235,221,195,1) 49%,rgba(230,216,189,1) 52%,rgba(230,216,189,1) 53%,rgba(233,219,192,1) 54%,rgba(230,216,189,1) 55%,rgba(230,216,189,1) 56%,rgba(233,219,192,1) 57%,rgba(230,216,189,1) 58%,rgba(230,216,189,1) 73%,rgba(233,219,192,1) 74%,rgba(233,219,192,1) 98%,rgba(235,221,195,1) 100%);
     
-  background: -o-linear-gradient(left, rgba(233,223,196,1) 0%,rgba(233,223,196,1) 1%,rgba(237,227,200,1) 2%,rgba(237,227,200,1) 24%,rgba(235,221,195,1) 25%,rgba(233,223,196,1) 48%,rgba(235,221,195,1) 49%,rgba(230,216,189,1) 52%,rgba(230,216,189,1) 53%,rgba(233,219,192,1) 54%,rgba(230,216,189,1) 55%,rgba(230,216,189,1) 56%,rgba(233,219,192,1) 57%,rgba(230,216,189,1) 58%,rgba(230,216,189,1) 73%,rgba(233,219,192,1) 74%,rgba(233,219,192,1) 98%,rgba(235,221,195,1) 100%);
+  // background: -o-linear-gradient(left, rgba(233,223,196,1) 0%,rgba(233,223,196,1) 1%,rgba(237,227,200,1) 2%,rgba(237,227,200,1) 24%,rgba(235,221,195,1) 25%,rgba(233,223,196,1) 48%,rgba(235,221,195,1) 49%,rgba(230,216,189,1) 52%,rgba(230,216,189,1) 53%,rgba(233,219,192,1) 54%,rgba(230,216,189,1) 55%,rgba(230,216,189,1) 56%,rgba(233,219,192,1) 57%,rgba(230,216,189,1) 58%,rgba(230,216,189,1) 73%,rgba(233,219,192,1) 74%,rgba(233,219,192,1) 98%,rgba(235,221,195,1) 100%);
     
-  background: -ms-linear-gradient(left, rgba(233,223,196,1) 0%,rgba(233,223,196,1) 1%,rgba(237,227,200,1) 2%,rgba(237,227,200,1) 24%,rgba(235,221,195,1) 25%,rgba(233,223,196,1) 48%,rgba(235,221,195,1) 49%,rgba(230,216,189,1) 52%,rgba(230,216,189,1) 53%,rgba(233,219,192,1) 54%,rgba(230,216,189,1) 55%,rgba(230,216,189,1) 56%,rgba(233,219,192,1) 57%,rgba(230,216,189,1) 58%,rgba(230,216,189,1) 73%,rgba(233,219,192,1) 74%,rgba(233,219,192,1) 98%,rgba(235,221,195,1) 100%);
+  // background: -ms-linear-gradient(left, rgba(233,223,196,1) 0%,rgba(233,223,196,1) 1%,rgba(237,227,200,1) 2%,rgba(237,227,200,1) 24%,rgba(235,221,195,1) 25%,rgba(233,223,196,1) 48%,rgba(235,221,195,1) 49%,rgba(230,216,189,1) 52%,rgba(230,216,189,1) 53%,rgba(233,219,192,1) 54%,rgba(230,216,189,1) 55%,rgba(230,216,189,1) 56%,rgba(233,219,192,1) 57%,rgba(230,216,189,1) 58%,rgba(230,216,189,1) 73%,rgba(233,219,192,1) 74%,rgba(233,219,192,1) 98%,rgba(235,221,195,1) 100%);
     
-  background: linear-gradient(left, rgba(233,223,196,1) 0%,rgba(233,223,196,1) 1%,rgba(237,227,200,1) 2%,rgba(237,227,200,1) 24%,rgba(235,221,195,1) 25%,rgba(233,223,196,1) 48%,rgba(235,221,195,1) 49%,rgba(230,216,189,1) 52%,rgba(230,216,189,1) 53%,rgba(233,219,192,1) 54%,rgba(230,216,189,1) 55%,rgba(230,216,189,1) 56%,rgba(233,219,192,1) 57%,rgba(230,216,189,1) 58%,rgba(230,216,189,1) 73%,rgba(233,219,192,1) 74%,rgba(233,219,192,1) 98%,rgba(235,221,195,1) 100%);
+  // background: linear-gradient(left, rgba(233,223,196,1) 0%,rgba(233,223,196,1) 1%,rgba(237,227,200,1) 2%,rgba(237,227,200,1) 24%,rgba(235,221,195,1) 25%,rgba(233,223,196,1) 48%,rgba(235,221,195,1) 49%,rgba(230,216,189,1) 52%,rgba(230,216,189,1) 53%,rgba(233,219,192,1) 54%,rgba(230,216,189,1) 55%,rgba(230,216,189,1) 56%,rgba(233,219,192,1) 57%,rgba(230,216,189,1) 58%,rgba(230,216,189,1) 73%,rgba(233,219,192,1) 74%,rgba(233,219,192,1) 98%,rgba(235,221,195,1) 100%);
 
-  background-size: 120px;
-  background-repeat: repeat;
+  // background-size: 120px;
+  // background-repeat: repeat;
+  background-image: url('sfondostoriamacoltoccodiclasse.jpg');
   div {
     position: absolute;
     width: 100vw;
@@ -40,7 +41,7 @@
       background-repeat: no-repeat;
       background-position: center center;
       display: block;
-     width: 1200px;
+      width: 1200px;
       height: 85vh;
       max-height: 570px;
       will-change: transform;
@@ -94,4 +95,62 @@
   width: calc(100% - 40px) !important;
   height: calc(100% - 40px) !important;
   padding: 20px;
+}
+
+.absoluto {
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px !important;
+    height: 725px !important;
+  }
+  .immobile, .coccarda, .bracciadestro, .bracciasinistro {
+    position: absolute;
+    z-index: 90;
+  }
+}
+
+.line {
+  border-left: 6px solid green;
+  height: auto;
+  margin-left: 100px;
+}
+
+.linered {
+  border-left: 6px solid red;
+  margin-left: 100px;
+  height: auto;
+}
+
+.flexCard {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.article {
+  padding: 20px;
+}
+
+.text {
+  color: black;
+  margin-left: 10px;
+  width: 70%;
+  font-size: 2rem;
+}
+
+.cornice {
+  border: black 10px solid;
+  width: 100%;
+  height: 100%;
+}
+
+.emquad {
 }

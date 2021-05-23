@@ -4,7 +4,7 @@ import Scienze from '../../components/Scienze';
 
 export default function scienze() {
   return (<>
-    <Home>
+    <Home dynamicColor={'white'}>
       <Scienze />
     </Home>
   </>

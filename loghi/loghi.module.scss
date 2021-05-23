@@ -187,9 +187,9 @@
 
 .logo_storia {
   @include CenterFlex();
-  position: relative;
-  width: 100px;
-  height: 145px;
+  position: relative !important;
+  width: 100px !important;
+  height: 145px !important;
   .relative {
     position: relative;
     @include CenterFlex();
